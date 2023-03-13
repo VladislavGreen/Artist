@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Artist
+
+  Created by Vladislav Green on 3/10/23.
+  
+*/
+
+//  General
+
+"OK" = "OK";
+"Cancel" = "Cancel";
+"Fix" = "Fix";
+"Welcome to the Artist App!" = "Welcome to the Artist App!";
+"Next" = "Next";
+
+
+// WelcomeView
+
+"The simple and convient app will let you spread your music all over the world!" = "The simple and convient app will let you spread your music all over the world!";
+
+"- keep and manage your tracks in one place" = "- keep and manage your tracks in one place";
+
+"- let people know what are you currently working on" = "- let people know what are you currently working on";
+
+"- share your music directly or using Artist Hub" = "- share your music directly or using Artist Hub";
+
+"Not registered yet? Press the Next button to join us!" = "Not registered yet? Press the Next button to join us!";
+
+
+
+//  LoginView
+
+"Log In" = "Log In";
+"Face ID" = "Face ID";
+
+

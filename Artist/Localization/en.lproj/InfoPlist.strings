@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  Artist
+
+  Created by Vladislav Green on 3/10/23.
+  
+*/
+
+
+//  FaceID
+
+"NSFaceIDUsageDescription" = "We use Face ID for better protection of your data";
+

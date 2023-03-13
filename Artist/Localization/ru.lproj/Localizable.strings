@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  Artist
+
+  Created by Vladislav Green on 3/10/23.
+  
+*/
+
+//  General
+
+"OK" = "Ладно";
+"Cancel" = "Отмена";
+"Fix" = "Исправить";
+"Welcome to the Artist App!" = "Добро пожаловать в Artist App";
+"Next" = "Дальше";
+
+
+// WelcomeView
+
+"The simple and convient app will let you spread your music all over the world!" = "Простое и удобное приложение позволит вам распространять музыку по всему миру!";
+
+"- keep and manage your tracks in one place" = "- все ваши треки легко управляются из одного приложения";
+
+"- let people know what are you currently working on" = "- покажите фанатам над чем вы работаете";
+
+"- share your music directly or using Artist Hub" = "- делитесь музыкой напрямую или используя Artist Hub";
+
+"Not registered yet? Press the Next button to join!" = "Ещё не зарегистрировались? Нажмите кнопку, чтобы присоединиться! ";
+
+
+
+//  LoginView
+
+"Log In" = "Войти";
+"Face ID" = "Face ID";
