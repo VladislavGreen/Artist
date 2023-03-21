@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ArtistApp: App {
+    @StateObject private var artistModelData = ArtistModelData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(artistModelData)
         }
     }
 }

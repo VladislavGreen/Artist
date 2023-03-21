@@ -1,0 +1,174 @@
+[
+    {
+        "id": 1000,
+        "name": "Default Electronic",
+        "dateRegistered": "2023.01.01",
+        "dateRegisteredTS": 1672531200000,
+        "isConfirmed": false,
+        "isPrimary": true,
+        "artistOrigin": {
+            "country": "Russia",
+            "city": "Saint-Petersburg"
+        },
+        "genres": {
+            "genrePrimary": "Electronic Music",
+            "genreSecondary": "Modular Wave"
+        },
+        "descriptionFull": "Large Text",
+        "descriptionShort": "Small Text",
+        "countFolowers": 1,
+        "countLikes": 1,
+        "mainImageName": "ElectronicTrio",
+        
+        "releases": [
+            {
+                "id": 987990,
+                "name": "Can't get enough",
+                "type": "EP",
+                "isFeatured": true,
+                "dateReleased": "2023.01.01",
+                "dateReleasedTS": 1672531200000,
+                "imageCoverName": "ElectronicTrio",
+                "labelName": "Errorgrid",
+                "tracks": [
+                    {
+                        "id": 140001,
+                        "number": 1,
+                        "trackName": "TÆT Coins For The Ghost",
+                        "playedTenDaysCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
+                        "favoritedCount": 904
+                    },
+                    {   "id": 140002,
+                        "number": 2,
+                        "trackName": "TÆT Minus Five",
+                        "playedTenDaysCount": [104, 102, 102, 124, 171, 181, 177, 199, 209, 231],
+                        "favoritedCount": 1009
+                    },
+                ]
+            },
+            {
+                "id": 987989,
+                "name": "Non stop",
+                "type": "Album",
+                "isFeatured": false,
+                "dateReleased": "2023.01.01",
+                "dateReleasedTS": 1672531200000,
+                "imageCoverName": "ElectronicTrio",
+                "labelName": "Errorgrid",
+                "tracks": [
+                    {   "id": 130001,
+                        "number": 1,
+                        "trackName": "TÆT Coins For The Ghost",
+                        "playedTenDaysCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
+                        "favoritedCount": 904
+                    },
+                    {   "id": 130002,
+                        "number": 2,
+                        "trackName": "TÆT Minus Five",
+                        "playedTenDaysCount": [104, 102, 102, 124, 171, 181, 177, 199, 209, 231],
+                        "favoritedCount": 1009
+                    },
+                ]
+            },
+            {
+                "id": 987988,
+                "name": "Nine Eight Seven",
+                "type": "Single",
+                "isFeatured": false,
+                "dateReleased": "2023.01.01",
+                "dateReleasedTS": 1672531200000,
+                "imageCoverName": "ElectronicTrio",
+                "labelName": "Errorgrid",
+                "tracks": [
+                    {   "id": 120001,
+                        "number": 1,
+                        "trackName": "TÆT Coins For The Ghost",
+                        "playedTenDaysCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
+                        "favoritedCount": 904
+                    },
+                ]
+            },
+            {
+                "id": 987987,
+                "name": "Fantastic trip",
+                "type": "Album",
+                "isFeatured": true,
+                "dateReleased": "2023.01.01",
+                "dateReleasedTS": 1672531200000,
+                "imageCoverName": "ElectronicTrio",
+                "labelName": "Errorgrid",
+                "tracks": [
+                    {
+                        "id": 110001,
+                        "number": 1,
+                        "trackName": "TÆT Coins For The Ghost",
+                        "playedTenDaysCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
+                        "favoritedCount": 904
+                    },
+                    {
+                        "id": 110002,
+                        "number": 2,
+                        "trackName": "TÆT Minus Five",
+                        "playedTenDaysCount": [104, 102, 102, 124, 171, 181, 177, 199, 209, 231],
+                        "favoritedCount": 1009
+                    },
+                ]
+            },
+        ],
+        
+        "posts": [
+            {
+                "id": 10002,
+                "date": "2023.03.21",
+                "dateTS": 1679163555000,
+                "titleEN": "Almost finished basic ProfileView",
+                "titleRU": "ProfileView",
+                "textEN": "Profile view is finished as a first draft. Now it's time to think what's next. There's still a lot of things to do. Endless UI details, stats, data generation and data transfer logic and integration of a music player. Also we still need to fix Onboarding.",
+                "textRU": "Russian keyboart isn't working right now - so we're writing in English. Profile view is finished as a first draft. It's time to think what to do next? There are still a lot of things to do. Endless UI details, stats, data generation and data transfer logic and integration of a music player. Also we still need to fix Onboarding.",
+                "imageName": "swiftUI",
+                "likeCount": 157,
+                "viewCount": 343,
+                "isFlagged": false
+            },
+            {
+                "id": 10001,
+                "date": "2023.03.18",
+                "dateTS": 1679163555000,
+                "titleEN": "ProfileView",
+                "titleRU": "ProfileView",
+                "textEN": "We're continuing exploring SwiftUI. A lot of experiments ahead! We're making our ProfileView right now",
+                "textRU": "Мы продолжаем изучать SwiftUI. Впереди много экспериментов! Прямо сы делаем наш ProfileView.",
+                "imageName": null,
+                "likeCount": 169,
+                "viewCount": 3433,
+                "isFlagged": false
+            },
+            {
+                "id": 10000,
+                "date": "2023.01.01",
+                "dateTS": 1672531200000,
+                "titleEN": "Welcome Joe",
+                "titleRU": "Добро пожаловать, Джо",
+                "textEN": "Our band has got member! Please meet the famous cyber drummer Joe! He is still learning playing drums but he looks fantastic and it's pretty enough as we think",
+                "textRU": "В нашей группе новый участник! Встречайте знаментого кибер-барабанщика Джо! Джо не умеет играть на барабанах, но выглядит потрясающе, и мы думаем, что этого вполне достаточно.",
+                "imageName": "Rockstar1",
+                "likeCount": 1694,
+                "viewCount": 8456,
+                "isFlagged": true
+            },
+            {
+                "id": 9999,
+                "date": "2022.12.26",
+                "dateTS": 1672012800000,
+                "titleEN": "New album soon!",
+                "titleRU": "Скоро новый альбом!",
+                "textEN": "Awesome news! Our new album is about to be released on Errorgrid label next week! Stаy tuned and don't miss!",
+                "textRU": "Прекрасные новости! Наш новый альбом будет выпущен на следующей неделе лейблом Errorgrid! Следите за новостями и не пропустите!",
+                "imageName": "ElectronicTrio",
+                "likeCount": 711,
+                "viewCount": 3991,
+                "isFlagged": true
+            }
+        ]
+    }
+]

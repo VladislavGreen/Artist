@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A415732A29C0B02B00E51DE0 /* TÆT Coins For The Ghost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A415732929C0B02B00E51DE0 /* TÆT Coins For The Ghost.mp3 */; };
+		A415732C29C0B05A00E51DE0 /* TÆT Minus Five.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A415732B29C0B05A00E51DE0 /* TÆT Minus Five.mp3 */; };
+		A415732F29C0C0B400E51DE0 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415732E29C0C0B300E51DE0 /* AvatarImageView.swift */; };
+		A415733129C0E00800E51DE0 /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733029C0E00800E51DE0 /* ScrollViewWrapper.swift */; };
+		A415733329C1F9E200E51DE0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733229C1F9E200E51DE0 /* Artist.swift */; };
+		A415733529C1FDB400E51DE0 /* ArtistModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733429C1FDB400E51DE0 /* ArtistModelData.swift */; };
+		A415733829C2017100E51DE0 /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733729C2017100E51DE0 /* PostRow.swift */; };
+		A415733A29C23A3D00E51DE0 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733929C23A3D00E51DE0 /* PostList.swift */; };
+		A415733C29C23D6000E51DE0 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733B29C23D6000E51DE0 /* PostDetail.swift */; };
+		A415733E29C4D85000E51DE0 /* FlagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733D29C4D85000E51DE0 /* FlagButton.swift */; };
+		A415734229C623B400E51DE0 /* ReleaseHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415734129C623B400E51DE0 /* ReleaseHome.swift */; };
+		A415734429C62C1E00E51DE0 /* ReleaseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415734329C62C1E00E51DE0 /* ReleaseRow.swift */; };
+		A415734629C7575600E51DE0 /* ReleaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415734529C7575600E51DE0 /* ReleaseItem.swift */; };
+		A415734829C840B700E51DE0 /* ReleaseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415734729C840B700E51DE0 /* ReleaseDetail.swift */; };
+		A415734A29C8443100E51DE0 /* TrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415734929C8443100E51DE0 /* TrackRow.swift */; };
+		A415734D29C85D1100E51DE0 /* FieldSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415734C29C85D1100E51DE0 /* FieldSeparator.swift */; };
+		A434043D29C088FA00E91CB4 /* artistsData001.json in Resources */ = {isa = PBXBuildFile; fileRef = A434043C29C088FA00E91CB4 /* artistsData001.json */; };
 		A4B6260D29B76B7E00BCD739 /* ArtistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6260C29B76B7E00BCD739 /* ArtistApp.swift */; };
 		A4B6260F29B76B7E00BCD739 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6260E29B76B7E00BCD739 /* ContentView.swift */; };
 		A4B6261129B76B8000BCD739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B6261029B76B8000BCD739 /* Assets.xcassets */; };
@@ -30,6 +47,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A415732929C0B02B00E51DE0 /* TÆT Coins For The Ghost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TÆT Coins For The Ghost.mp3"; sourceTree = "<group>"; };
+		A415732B29C0B05A00E51DE0 /* TÆT Minus Five.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TÆT Minus Five.mp3"; sourceTree = "<group>"; };
+		A415732E29C0C0B300E51DE0 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		A415733029C0E00800E51DE0 /* ScrollViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWrapper.swift; sourceTree = "<group>"; };
+		A415733229C1F9E200E51DE0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		A415733429C1FDB400E51DE0 /* ArtistModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModelData.swift; sourceTree = "<group>"; };
+		A415733729C2017100E51DE0 /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
+		A415733929C23A3D00E51DE0 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
+		A415733B29C23D6000E51DE0 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
+		A415733D29C4D85000E51DE0 /* FlagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagButton.swift; sourceTree = "<group>"; };
+		A415734129C623B400E51DE0 /* ReleaseHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseHome.swift; sourceTree = "<group>"; };
+		A415734329C62C1E00E51DE0 /* ReleaseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRow.swift; sourceTree = "<group>"; };
+		A415734529C7575600E51DE0 /* ReleaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseItem.swift; sourceTree = "<group>"; };
+		A415734729C840B700E51DE0 /* ReleaseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseDetail.swift; sourceTree = "<group>"; };
+		A415734929C8443100E51DE0 /* TrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRow.swift; sourceTree = "<group>"; };
+		A415734C29C85D1100E51DE0 /* FieldSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldSeparator.swift; sourceTree = "<group>"; };
+		A434043C29C088FA00E91CB4 /* artistsData001.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = artistsData001.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		A4B6260929B76B7E00BCD739 /* Artist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B6260C29B76B7E00BCD739 /* ArtistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistApp.swift; sourceTree = "<group>"; };
 		A4B6260E29B76B7E00BCD739 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +101,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A415732829C0AFE900E51DE0 /* ElectronicTracks */ = {
+			isa = PBXGroup;
+			children = (
+				A415732B29C0B05A00E51DE0 /* TÆT Minus Five.mp3 */,
+				A415732929C0B02B00E51DE0 /* TÆT Coins For The Ghost.mp3 */,
+			);
+			path = ElectronicTracks;
+			sourceTree = "<group>";
+		};
+		A415732D29C0C08D00E51DE0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A4B6263329BA568600BCD739 /* ProfileView.swift */,
+				A415733F29C4D94D00E51DE0 /* ProfileHelpers */,
+				A415734029C6239700E51DE0 /* Post */,
+				A415734B29C8538900E51DE0 /* Release */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A415733629C1FE8D00E51DE0 /* ArtistModel */ = {
+			isa = PBXGroup;
+			children = (
+				A415733229C1F9E200E51DE0 /* Artist.swift */,
+				A415733429C1FDB400E51DE0 /* ArtistModelData.swift */,
+			);
+			path = ArtistModel;
+			sourceTree = "<group>";
+		};
+		A415733F29C4D94D00E51DE0 /* ProfileHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				A415733029C0E00800E51DE0 /* ScrollViewWrapper.swift */,
+				A415732E29C0C0B300E51DE0 /* AvatarImageView.swift */,
+				A415733D29C4D85000E51DE0 /* FlagButton.swift */,
+				A415734C29C85D1100E51DE0 /* FieldSeparator.swift */,
+			);
+			path = ProfileHelpers;
+			sourceTree = "<group>";
+		};
+		A415734029C6239700E51DE0 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				A415733929C23A3D00E51DE0 /* PostList.swift */,
+				A415733729C2017100E51DE0 /* PostRow.swift */,
+				A415733B29C23D6000E51DE0 /* PostDetail.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		A415734B29C8538900E51DE0 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				A415734129C623B400E51DE0 /* ReleaseHome.swift */,
+				A415734329C62C1E00E51DE0 /* ReleaseRow.swift */,
+				A415734529C7575600E51DE0 /* ReleaseItem.swift */,
+				A415734729C840B700E51DE0 /* ReleaseDetail.swift */,
+				A415734929C8443100E51DE0 /* TrackRow.swift */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		A434043E29C0890700E91CB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A415732829C0AFE900E51DE0 /* ElectronicTracks */,
+				A434043C29C088FA00E91CB4 /* artistsData001.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A4B6260029B76B7E00BCD739 = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +201,11 @@
 				A4B6262D29B9F18500BCD739 /* TextFielder.swift */,
 				A4B6261229B76B8000BCD739 /* Preview Content */,
 				A4B6262629B7843C00BCD739 /* Onboarding */,
-				A4B6263329BA568600BCD739 /* ProfileView.swift */,
+				A415732D29C0C08D00E51DE0 /* Profile */,
 				A4B6263529BB325F00BCD739 /* StatsView.swift */,
 				A4B6263729BB32AB00BCD739 /* EditView.swift */,
+				A434043E29C0890700E91CB4 /* Resources */,
+				A415733629C1FE8D00E51DE0 /* ArtistModel */,
 			);
 			path = Artist;
 			sourceTree = "<group>";
@@ -207,7 +314,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A415732A29C0B02B00E51DE0 /* TÆT Coins For The Ghost.mp3 in Resources */,
 				A4B6263E29BB405800BCD739 /* Localizable.strings in Resources */,
+				A434043D29C088FA00E91CB4 /* artistsData001.json in Resources */,
+				A415732C29C0B05A00E51DE0 /* TÆT Minus Five.mp3 in Resources */,
 				A4B6264429BB430100BCD739 /* InfoPlist.strings in Resources */,
 				A4B6263229BA158C00BCD739 /* toDo.rtf in Resources */,
 				A4B6261429B76B8000BCD739 /* Preview Assets.xcassets in Resources */,
@@ -227,14 +337,28 @@
 				A4B6262129B77B3000BCD739 /* Colors.swift in Sources */,
 				A4B6261F29B770AA00BCD739 /* Fonts.swift in Sources */,
 				A4B6262C29B7B11D00BCD739 /* OnboardingView.swift in Sources */,
+				A415733A29C23A3D00E51DE0 /* PostList.swift in Sources */,
+				A415734229C623B400E51DE0 /* ReleaseHome.swift in Sources */,
 				A4B6263429BA568600BCD739 /* ProfileView.swift in Sources */,
+				A415733829C2017100E51DE0 /* PostRow.swift in Sources */,
+				A415733E29C4D85000E51DE0 /* FlagButton.swift in Sources */,
 				A4B6262329B7815000BCD739 /* WelcomeView.swift in Sources */,
+				A415733C29C23D6000E51DE0 /* PostDetail.swift in Sources */,
 				A4B6263829BB32AB00BCD739 /* EditView.swift in Sources */,
+				A415733529C1FDB400E51DE0 /* ArtistModelData.swift in Sources */,
 				A4B6262A29B7B0D500BCD739 /* LoginView.swift in Sources */,
+				A415733129C0E00800E51DE0 /* ScrollViewWrapper.swift in Sources */,
+				A415734829C840B700E51DE0 /* ReleaseDetail.swift in Sources */,
 				A4B6263D29BB3FE300BCD739 /* StringExtention.swift in Sources */,
+				A415732F29C0C0B400E51DE0 /* AvatarImageView.swift in Sources */,
 				A4B6262829B7B07600BCD739 /* SignInView.swift in Sources */,
+				A415734429C62C1E00E51DE0 /* ReleaseRow.swift in Sources */,
 				A4B6263629BB325F00BCD739 /* StatsView.swift in Sources */,
+				A415734D29C85D1100E51DE0 /* FieldSeparator.swift in Sources */,
+				A415734629C7575600E51DE0 /* ReleaseItem.swift in Sources */,
+				A415734A29C8443100E51DE0 /* TrackRow.swift in Sources */,
 				A4B6262E29B9F18500BCD739 /* TextFielder.swift in Sources */,
+				A415733329C1F9E200E51DE0 /* Artist.swift in Sources */,
 				A4B6260D29B76B7E00BCD739 /* ArtistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
