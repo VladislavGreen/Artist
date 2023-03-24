@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "LKS.Hunter_Hacker_explosion_in_cyberspace_on_a_firewall_Futuris_60584797-304a-462b-879c-8ad2bc0416c6.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

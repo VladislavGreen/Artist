@@ -17,7 +17,9 @@ struct EditView: View {
         
         VStack {
             
-            Text("EditView (Пока здесь временные служебные кнопки)")
+            Text("EditView (Пока здесь временные служебные кнопки и эксперименты")
+            
+            AudioPlayerView()
             
             Button(action: {
                 isNotLoggedIn = true

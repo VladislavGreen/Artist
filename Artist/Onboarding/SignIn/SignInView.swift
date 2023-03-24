@@ -15,6 +15,7 @@ struct SignInView: View {
     @AppStorage("needsAppOnboarding") private var needsAppOnboarding: Bool = true
     @AppStorage("isNotLoggedIn") private var isNotLoggedIn = true
     
+    @State private var greetingSize: CGSize = .zero
     
     @State private var userEmail: String = ""
     @State private var isEmailValid: Bool = true
@@ -34,27 +35,15 @@ struct SignInView: View {
     
     var body: some View {
         
-        VStack {
-            Spacer(minLength: 150)
+        ScrollView {
             
-            Image(systemName: "wand.and.stars")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 160, height: 160, alignment: .center)
-                .padding(.bottom, 48)
+            Spacer()
             
-            Text("Welcome to the Artist App!")
-                .font(CustomFont.heading.bold())
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 24)
-
-            
-            Text("Please Sign in with this simple form")
-                .font(CustomFont.subheading)
-                .padding(8)
-            
+            SigninGreeting()
+                .padding(.top, 120)
             
             VStack(spacing: -0.5) {
+                
                 TextField("Email", text: $userEmail, onEditingChanged: { isChanged in
                     if !isChanged {
                         if textFieldValidatorEmail(userEmail) {
@@ -90,7 +79,6 @@ struct SignInView: View {
                         passwordInFocus = true
                     }
                 }
-//                    .opacity(isPasswordVisible ? 1 : 0)
                     .modifier(TextFielder())
                     .focused($passwordInFocus)
                     .alert("Entered password is too short. There must be more than 2 symbols",
@@ -100,10 +88,9 @@ struct SignInView: View {
                         }
                     }
                     
-                
                 SecureField("Password confirmation", text: $passwordConfirmation)
-//                    .opacity(isPasswordVisible ? 1 : 0)
                     .modifier(TextFielder())
+                
             }
             .cornerRadius(12)
             .padding(.top, 16)
@@ -114,16 +101,16 @@ struct SignInView: View {
             
             HStack {
                 Button(action: {
-                                        
+
                     if self.password == self.passwordConfirmation {
-                        
+
                         createNewAccount(userEmail: userEmail, password: password)
                         print("logging in")
                     } else {
                         showingPasswordDontMatchAlert = true
                         print("login failed")
                     }
-                    
+
                 }) {
                     Text("Create account".localized)
                         .padding(.horizontal, 16)
@@ -140,9 +127,9 @@ struct SignInView: View {
                             passwordConfirmation = ""
                         }
                     }
-                    
+
                     Spacer()
-                
+
                 Button {
                     isPasswordVisible.toggle()
                 } label: {
@@ -152,12 +139,12 @@ struct SignInView: View {
             }
             
             Spacer()
-            
         }
-        .frame(maxWidth: .infinity)
+//        .frame(maxWidth: .infinity)
         .background(Color.backgroundTertiary)
         .foregroundColor(.textTertiary)
-        .ignoresSafeArea(.all, edges: .all)
+//        .ignoresSafeArea(.all, edges: .all)
+        .adaptsToKeyboard()
     }
     
     

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "imed_ad_A_group_of_space_explorers_different_animals__exploring_c05a2ce2-11dc-41b6-aefe-e863d0a01282.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

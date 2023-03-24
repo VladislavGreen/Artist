@@ -11,6 +11,7 @@ import Combine
 
 final class ArtistModelData: ObservableObject {
     @Published var artists: [Artist] = load("artistsData001.json")
+    @Published var profile = Profile.default
     
     var featuredReleases: [Release] {
         artists[0].releases.filter { $0.isFeatured }

@@ -14,7 +14,6 @@ struct ReleaseRow: View {
     var isSortedByType: Bool = false
     
     @State var showingReleases = false
-//    @State var showingRelease = false
     @State private var selectedRelease: Release? = nil
 
     
@@ -27,7 +26,7 @@ struct ReleaseRow: View {
                 Text(releaseType + "s")
                     .font(CustomFont.heading)
                     .padding(.leading, 16)
-                    .padding(.top, 5)
+                    .padding(.top, 16)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 0) {
@@ -40,7 +39,7 @@ struct ReleaseRow: View {
                         }
                     }
                 }
-                .frame(height: 116)
+                .frame(height: 140)
                 
             } else {
                 

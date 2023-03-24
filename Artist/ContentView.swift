@@ -12,13 +12,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage("needsAppOnboarding") private var needsAppOnboarding: Bool = true
-    @AppStorage("isNotLoggedIn") private var isNotLoggedIn = true
+    @AppStorage("needsAppOnboarding") private var needsAppOnboarding: Bool = false
+    @AppStorage("isNotLoggedIn") private var isNotLoggedIn = false
     
     var body: some View {
         
         TabView() {
-            ProfileView()
+            ArtistView()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill.checkmark")
                 }

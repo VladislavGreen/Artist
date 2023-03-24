@@ -8,22 +8,54 @@
 import SwiftUI
 
 
-struct ProfileView: View {
+struct ArtistView: View {
     
     @State private var showingReleases = false
+    @State private var showingProfile = false
     @State var scrollOffset = CGFloat.zero
+    
+    @ObservedObject var audioManager = AudioManager.shared
+    
     
     let artist = ArtistModelData().artists[0]
     
     var body: some View {
         
         ZStack {
+            
+            VStack {
+                HStack {
+                    Button(action: {
+                        // Пока это просто индикатор
+                    }) {
+                        Image(systemName: self.audioManager.isPlaying ? "play.fill" : "play")
+                            .font(CustomFont.title)
+                            .imageScale(.medium)
+                    }
+                           
+                    Spacer()
+                    ProfileButton() {
+                        showingProfile.toggle()
+                    }
+                    .sheet(isPresented: $showingProfile) {
+                        ProfileHost()
+//                            .environmentObject(artistModelData)
+                    }
+                    
+                }
+                Spacer()
+            }
+            .zIndex(1)
+            .padding(8)
+            
+            
+            
             VStack {
                 AvatarImageView(image: artist.mainImage)
                  .ignoresSafeArea(edges: .horizontal)
                  .blur(radius: scrollOffset/90)
                  .opacity(90 / scrollOffset)
-                 
+
                  Spacer()
             }
           
@@ -40,10 +72,13 @@ struct ProfileView: View {
                         VStack {
                             Text(artist.name + "Rockstar Rockstarovitch ")
                                 .font(CustomFont.title)
+                                .foregroundColor(.white)
+                                .bold()
                                 .padding(4)
                             HStack {
                                 Text("Main Genre")
                                     .font(CustomFont.subheading)
+                                    .foregroundColor(.white)
                                 Text("\(scrollOffset)")
                             }
                         }
@@ -70,13 +105,20 @@ struct ProfileView: View {
                     
                 }
             }
+            
+            VStack {
+                Spacer()
+                
+                AudioPlayerView()
+            }
+            .zIndex(1)
         }
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
+struct ArtistView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ArtistView()
             .environmentObject(ArtistModelData())
     }
 }

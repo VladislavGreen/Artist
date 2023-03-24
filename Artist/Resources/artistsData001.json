@@ -28,7 +28,7 @@
                 "isFeatured": true,
                 "dateReleased": "2023.01.01",
                 "dateReleasedTS": 1672531200000,
-                "imageCoverName": "ElectronicTrio",
+                "imageCoverName": "Album4",
                 "labelName": "Errorgrid",
                 "tracks": [
                     {
@@ -53,7 +53,7 @@
                 "isFeatured": false,
                 "dateReleased": "2023.01.01",
                 "dateReleasedTS": 1672531200000,
-                "imageCoverName": "ElectronicTrio",
+                "imageCoverName": "Album3",
                 "labelName": "Errorgrid",
                 "tracks": [
                     {   "id": 130001,
@@ -77,7 +77,7 @@
                 "isFeatured": false,
                 "dateReleased": "2023.01.01",
                 "dateReleasedTS": 1672531200000,
-                "imageCoverName": "ElectronicTrio",
+                "imageCoverName": "Album2",
                 "labelName": "Errorgrid",
                 "tracks": [
                     {   "id": 120001,
@@ -95,7 +95,7 @@
                 "isFeatured": true,
                 "dateReleased": "2023.01.01",
                 "dateReleasedTS": 1672531200000,
-                "imageCoverName": "ElectronicTrio",
+                "imageCoverName": "Album1",
                 "labelName": "Errorgrid",
                 "tracks": [
                     {

@@ -47,6 +47,7 @@ struct ReleaseHome: View {
                 }
                 .listRowInsets(EdgeInsets())
             }
+            .listStyle(.inset)
             .navigationTitle("Discography")
         }
     }

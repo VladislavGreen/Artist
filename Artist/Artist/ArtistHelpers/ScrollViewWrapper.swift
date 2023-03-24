@@ -14,7 +14,6 @@ struct ScrollViewOffsetPreferenceKey: PreferenceKey {
 
   static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
       
-      // работает в preview, но не в симуляторе
       guard value > 0 else {
           value = 0
           return

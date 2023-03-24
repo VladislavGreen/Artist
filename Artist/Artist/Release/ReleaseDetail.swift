@@ -18,6 +18,7 @@ struct ReleaseDetail: View {
             HStack {
                 Text(release.name)
                     .font(CustomFont.heading)
+                    .padding(8)
             }
             release.imageCover
                 .resizable()

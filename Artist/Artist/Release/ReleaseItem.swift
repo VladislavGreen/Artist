@@ -24,6 +24,7 @@ struct ReleaseItem: View {
                 .font(.caption)
         }
         .padding(.leading, 16)
+        .padding(.bottom, 16)
     }
 }
 

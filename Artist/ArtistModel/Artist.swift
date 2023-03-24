@@ -76,6 +76,7 @@ struct Release: Hashable, Codable, Identifiable {
         case album = "Album"
         case ep = "EP"
         case single = "Single"
+        case compilation = "Compilation"
     }
     
     var isFeatured: Bool
