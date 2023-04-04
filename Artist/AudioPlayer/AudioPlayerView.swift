@@ -12,91 +12,122 @@ import AVKit
 
 struct AudioPlayerView: View {
     
-    @ObservedObject private var audioManager = AudioManager.shared
-    var trackName = "TÆT Minus Five"
+    @ObservedObject private var audioManager = StreamManager.shared
     @State var size: CGSize = .zero
-
+    @State var isMaximazed = true
+    
     
     var body: some View {
-        VStack {
-            
-            HStack(alignment: .center, spacing: 20) {
+        
+        if isMaximazed {
+            VStack {
                 
-                Spacer()
-                
-                Button(action: {
-                    audioManager.isRepeating.toggle()
-                }) {
-                    Image(systemName: audioManager.isRepeating ? "arrow.forward" : "repeat")
-                        .font(CustomFont.title)
-                        .imageScale(.medium)
-                }
-                
-                Button(action: {
-                    audioManager.rewind()
-                }) {
-                    Image(systemName: "gobackward.15")
-                        .font(CustomFont.title)
-                        .imageScale(.medium)
-                }
-                
-                Button {
-                    audioManager.isPlaying.toggle()
+                HStack(alignment: .center, spacing: 0) {
                     
-                    if audioManager.isPlaying {
-                        audioManager.play(sound: trackName)
-                    } else {
-                        audioManager.pause()
-                    }
-                } label: {
-                    Image(systemName: audioManager.isPlaying ? "pause.circle" : "play" )
-                        .font(CustomFont.title)
-                        .imageScale(.large)
+                    Text(
+                        audioManager.isPlaying
+                        ? audioManager.currentTrack?.trackName ?? "Play me"
+                        : (audioManager.currentTrack?.trackName ?? "Play me") + " [paused]" 
+                    )
+                    .lineLimit(1)
+                    .font(CustomFont.small)
+                    .foregroundColor(.accentColor)
+                    .padding(.top, 8)
+                    .padding(.horizontal, 16)
+                    .opacity(audioManager.isPlaying || audioManager.isPaused ? 1 : 0)
+                    
+                    Spacer()
                 }
                 
-                Button(action: {
-                    audioManager.forward()
-                }) {
-                    Image(systemName: "goforward.15")
-                        .font(.title)
-                        .imageScale(.medium)
+                HStack(alignment: .center, spacing: 28) {
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        audioManager.isRepeating.toggle()
+                    }) {
+                        Image(systemName: audioManager.isRepeating ? "arrow.forward" : "repeat")
+                            .font(CustomFont.title)
+                            .imageScale(.small)
+                    }
+                    
+                    Button(action: {
+                        audioManager.rewind()
+                    }) {
+                        Image(systemName: "gobackward.15")
+                            .font(CustomFont.title)
+                            .imageScale(.medium)
+                    }
+                    
+                    AudioPlayerPlayButton(isMaximased: $isMaximazed)
+                        .padding(.horizontal, 8)
+                    
+                    Button(action: {
+                        audioManager.forward()
+                    }) {
+                        Image(systemName: "goforward.15")
+                            .font(.title)
+                            .imageScale(.medium)
+                    }
+                    
+                    
+                    
+                    Button(action: {
+                        isMaximazed.toggle()
+                    }) {
+                        Image(systemName: "arrow.triangle.merge")
+                            .font(.title)
+                            .imageScale(.small)
+                        
+                    }
+                    
+                    Spacer()
                 }
-                 
+                
+                HStack{
+                    Text(audioManager.formattedProgress)
+                        .font(.caption.monospacedDigit())   //This is to prevent the numbers from changing position when the kerning changes!
+                        .foregroundColor(.accentColor)
+                    
+                    GeometryReader { geometryReader in
+                        Capsule()
+                            .stroke(Color.accentColor, lineWidth: 0.5)
+                            .background(
+                                Capsule()
+                                    .foregroundColor(.accentColor)
+                                    .frame(
+                                        width: geometryReader.size.width * audioManager.progress,
+                                        height:  8),
+                                alignment: .leading)
+                    }
+                    .frame(height: 4)
+                    
+                    Text(audioManager.formattedDuration)
+                        .font(.caption.monospacedDigit())
+                        .foregroundColor(.accentColor)
+                }
+                .padding()
+                .frame(height: 8)
+                .accessibilityElement(children: .ignore)
+                .accessibility(identifier: "player")
+                .accessibilityLabel(Text(audioManager.isPlaying ? "Playing at " : "Duration"))
+                .accessibilityValue(Text("\(audioManager.formattedProgress)"))
+            }
+            .padding(.bottom, 8)
+            .background(Color.backgroundPrimary)
+            .opacity(0.85)
+        }
+        else {
+            VStack {
+                Spacer ()
+                HStack {
+                    Spacer()
+                    AudioPlayerPlayButton(isMaximased: $isMaximazed)
+                        .padding(.trailing, 8)
+                }
                 Spacer()
             }
-            .padding(.top, 16)
-            
-            HStack{
-                Text(audioManager.formattedProgress)
-                    .font(.caption.monospacedDigit())   //This is to prevent the numbers from changing position when the kerning changes!
-                    .foregroundColor(.accentColor)
-                
-                GeometryReader { geometryReader in
-                    Capsule()
-                        .stroke(Color.accentColor, lineWidth: 1)
-                        .background(
-                        Capsule()
-                            .foregroundColor(.accentColor)
-                            .frame(
-                                width: geometryReader.size.width * audioManager.progress,
-                                height:  8),
-                        alignment: .leading)
-                }
-                .frame(height: 4)
-                
-                Text(audioManager.formattedDuration)
-                    .font(.caption.monospacedDigit())
-                    .foregroundColor(.accentColor)
-            }
-            .padding()
-            .frame(height: 8)
-            .accessibilityElement(children: .ignore)
-            .accessibility(identifier: "player")
-            .accessibilityLabel(audioManager.isPlaying ? Text("Playing at ") : Text("Duration"))
-            .accessibilityValue(Text("\(audioManager.formattedProgress)"))
         }
-        .background(Color.backgroundPrimary)
-        .opacity(0.85)
     }
 }
 

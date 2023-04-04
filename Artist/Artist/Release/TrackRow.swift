@@ -14,49 +14,16 @@ struct TrackRow: View {
     
     var body: some View {
         
-        
         HStack {
             
             Text("\(track.number)")
                 .padding(.leading, 8)
+            
             Text(track.trackName)
                 .lineLimit(1)
                 
             Spacer()
             
-            Button {
-                
-                if audioManager.currentTrack == track.trackName,
-                   audioManager.isPlaying {
-                        audioManager.pause()
-                }
-                if audioManager.currentTrack != track.trackName,
-                   audioManager.isPlaying {
-//                        audioManager.pause()
-                        audioManager.play(sound: track.trackName)
-                        audioManager.currentTrack = track.trackName
-                }
-                if !audioManager.isPlaying  {
-                        audioManager.play(sound: track.trackName)
-                        audioManager.currentTrack = track.trackName
-                }
-            } label: {
-                if audioManager.currentTrack == track.trackName,
-                   audioManager.isPlaying {
-                    Image(systemName: "pause.circle")
-                        .font(CustomFont.subheading)
-                        .imageScale(.medium)
-                        .padding(.leading, 16)
-                        .padding(.trailing, 8)
-                } else {
-                    Image(systemName: "play" )
-                        .font(CustomFont.subheading)
-                        .imageScale(.medium)
-                        .padding(.leading, 16)
-                        .padding(.trailing, 8)
-                }
-            }
-                
         }
     }
 }

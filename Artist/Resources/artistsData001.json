@@ -19,6 +19,7 @@
         "countFolowers": 1,
         "countLikes": 1,
         "mainImageName": "ElectronicTrio",
+        "mainImageURL": "https://disk.yandex.ru/i/UwJvmA9JAMyI6w",
         
         "releases": [
             {
@@ -29,19 +30,22 @@
                 "dateReleased": "2023.01.01",
                 "dateReleasedTS": 1672531200000,
                 "imageCoverName": "Album4",
+                "imageCoverURL": "https://disk.yandex.ru/i/QKOBWbBuW3eZ8g",
                 "labelName": "Errorgrid",
                 "tracks": [
                     {
                         "id": 140001,
                         "number": 1,
                         "trackName": "TÆT Coins For The Ghost",
-                        "playedTenDaysCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
-                        "favoritedCount": 904
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
+                        "playedDailyCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
+                        "favoritedCount": 1008
                     },
                     {   "id": 140002,
                         "number": 2,
                         "trackName": "TÆT Minus Five",
-                        "playedTenDaysCount": [104, 102, 102, 124, 171, 181, 177, 199, 209, 231],
+                        "trackURL": "https://disk.yandex.ru/d/Jcna35sYXjA76Q",
+                        "playedDailyCount": [104, 102, 102, 124, 171, 181, 177, 199, 209, 231],
                         "favoritedCount": 1009
                     },
                 ]
@@ -54,19 +58,29 @@
                 "dateReleased": "2023.01.01",
                 "dateReleasedTS": 1672531200000,
                 "imageCoverName": "Album3",
+                "imageCoverURL": "https://disk.yandex.ru/i/Vwk7wCAsuynMGg",
                 "labelName": "Errorgrid",
                 "tracks": [
                     {   "id": 130001,
                         "number": 1,
                         "trackName": "TÆT Coins For The Ghost",
-                        "playedTenDaysCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
+                        "playedDailyCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
                         "favoritedCount": 904
                     },
                     {   "id": 130002,
                         "number": 2,
                         "trackName": "TÆT Minus Five",
-                        "playedTenDaysCount": [104, 102, 102, 124, 171, 181, 177, 199, 209, 231],
-                        "favoritedCount": 1009
+                        "trackURL": "https://drive.google.com/uc?export=open&id=13x5qwRqCoV_keP3Zbc2tCCGeNuZEkPGK",
+                        "playedDailyCount": [104, 102, 102, 124, 171, 181, 177, 199, 389, 231],
+                        "favoritedCount": 1000
+                    },
+                    {   "id": 130003,
+                        "number": 3,
+                        "trackName": "TÆT Back Beams",
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1C25-GQ4lJH-TMyeokLs2gt-ZfzCDDRNX",
+                        "playedDailyCount": [205, 198, 147, 112, 125, 199, 187, 209, 345, 1021],
+                        "favoritedCount": 2834
                     },
                 ]
             },
@@ -78,12 +92,14 @@
                 "dateReleased": "2023.01.01",
                 "dateReleasedTS": 1672531200000,
                 "imageCoverName": "Album2",
+                "imageCoverURL": "https://disk.yandex.ru/i/I24D7rZFGSBiyA",
                 "labelName": "Errorgrid",
                 "tracks": [
                     {   "id": 120001,
                         "number": 1,
                         "trackName": "TÆT Coins For The Ghost",
-                        "playedTenDaysCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
+                        "playedDailyCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
                         "favoritedCount": 904
                     },
                 ]
@@ -96,21 +112,24 @@
                 "dateReleased": "2023.01.01",
                 "dateReleasedTS": 1672531200000,
                 "imageCoverName": "Album1",
+                "imageCoverURL": "ftp://raduga70:568249@ftp://raduga70.valuehost.ru:21/ArtistAppResourses/AlbumCover01.png",
                 "labelName": "Errorgrid",
                 "tracks": [
                     {
                         "id": 110001,
                         "number": 1,
                         "trackName": "TÆT Coins For The Ghost",
-                        "playedTenDaysCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
+                        "playedDailyCount": [144, 122, 202, 205, 190, 171, 167, 171, 194, 211],
                         "favoritedCount": 904
                     },
                     {
                         "id": 110002,
                         "number": 2,
                         "trackName": "TÆT Minus Five",
-                        "playedTenDaysCount": [104, 102, 102, 124, 171, 181, 177, 199, 209, 231],
-                        "favoritedCount": 1009
+                        "trackURL": "https://drive.google.com/uc?export=open&id=13x5qwRqCoV_keP3Zbc2tCCGeNuZEkPGK",
+                        "playedDailyCount": [104, 102, 102, 124, 171, 181, 177, 199, 209, 231],
+                        "favoritedCount": 1000
                     },
                 ]
             },
@@ -126,6 +145,7 @@
                 "textEN": "Profile view is finished as a first draft. Now it's time to think what's next. There's still a lot of things to do. Endless UI details, stats, data generation and data transfer logic and integration of a music player. Also we still need to fix Onboarding.",
                 "textRU": "Russian keyboart isn't working right now - so we're writing in English. Profile view is finished as a first draft. It's time to think what to do next? There are still a lot of things to do. Endless UI details, stats, data generation and data transfer logic and integration of a music player. Also we still need to fix Onboarding.",
                 "imageName": "swiftUI",
+                "imageURL": "https://disk.yandex.ru/i/M5okSk2K7pDdFA",
                 "likeCount": 157,
                 "viewCount": 343,
                 "isFlagged": false
@@ -139,6 +159,7 @@
                 "textEN": "We're continuing exploring SwiftUI. A lot of experiments ahead! We're making our ProfileView right now",
                 "textRU": "Мы продолжаем изучать SwiftUI. Впереди много экспериментов! Прямо сы делаем наш ProfileView.",
                 "imageName": null,
+                "imageURL": null,
                 "likeCount": 169,
                 "viewCount": 3433,
                 "isFlagged": false
@@ -152,6 +173,7 @@
                 "textEN": "Our band has got member! Please meet the famous cyber drummer Joe! He is still learning playing drums but he looks fantastic and it's pretty enough as we think",
                 "textRU": "В нашей группе новый участник! Встречайте знаментого кибер-барабанщика Джо! Джо не умеет играть на барабанах, но выглядит потрясающе, и мы думаем, что этого вполне достаточно.",
                 "imageName": "Rockstar1",
+                "imageURL": "https://disk.yandex.ru/i/VN8zEH1a_PIJwQ",
                 "likeCount": 1694,
                 "viewCount": 8456,
                 "isFlagged": true
@@ -165,6 +187,7 @@
                 "textEN": "Awesome news! Our new album is about to be released on Errorgrid label next week! Stаy tuned and don't miss!",
                 "textRU": "Прекрасные новости! Наш новый альбом будет выпущен на следующей неделе лейблом Errorgrid! Следите за новостями и не пропустите!",
                 "imageName": "ElectronicTrio",
+                "imageURL": "https://disk.yandex.ru/i/UwJvmA9JAMyI6w",
                 "likeCount": 711,
                 "viewCount": 3991,
                 "isFlagged": true

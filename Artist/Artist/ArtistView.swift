@@ -34,6 +34,7 @@ struct ArtistView: View {
                     }
                            
                     Spacer()
+                    
                     ProfileButton() {
                         showingProfile.toggle()
                     }
@@ -48,8 +49,6 @@ struct ArtistView: View {
             .zIndex(1)
             .padding(8)
             
-            
-            
             VStack {
                 AvatarImageView(image: artist.mainImage)
                  .ignoresSafeArea(edges: .horizontal)
@@ -63,9 +62,28 @@ struct ArtistView: View {
 
                 VStack {
 
-                    AvatarImageView(image: artist.mainImage)
-                        .ignoresSafeArea(edges: .horizontal)
-                        .opacity(0)
+                    ZStack {
+                        AvatarImageView(image: artist.mainImage)
+                            .ignoresSafeArea(edges: .horizontal)
+                            .opacity(0)
+                        
+                        Button(action: {
+                            guard !audioManager.isPlaying else {
+                                audioManager.pause()
+                                return
+                            }
+                            audioManager.playTopPlaylist(releases: artist.releases)
+                            
+                        }) {
+                            Image(systemName: "play.circle")
+                                .resizable()
+                                .font(CustomFont.title)
+                                .imageScale(.medium)
+                                .foregroundColor(.red)
+                                .opacity(0)
+                        }
+                        
+                    }
 
                     VStack {
 

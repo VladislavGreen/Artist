@@ -39,6 +39,8 @@ struct Artist: Hashable, Codable, Identifiable {
         Image(mainImageName)
     }
     
+    var mainImageURL: String
+    
     var posts: [Post]
     var releases: [Release]
 }
@@ -60,7 +62,7 @@ struct Post: Hashable, Codable, Identifiable {
         }
         return Image(imageName!)
     }
-        
+    var imageURL: String?
     var likeCount: Int
     var viewCount: Int
     var isFlagged: Bool
@@ -88,6 +90,7 @@ struct Release: Hashable, Codable, Identifiable {
         Image(imageCoverName)
     }
     
+    var imageCoverURL: String
     var labelName: String
     
     var tracks: [Track]
@@ -98,7 +101,8 @@ struct Track: Hashable, Codable, Identifiable {
     var id: Int
     var number: Int
     var trackName: String
-    var playedTenDaysCount: [Int]
+    var trackURL: String
+    var playedDailyCount: [Int]
     var favoritedCount: Int
 }
 

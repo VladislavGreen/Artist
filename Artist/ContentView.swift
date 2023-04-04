@@ -17,27 +17,29 @@ struct ContentView: View {
     
     var body: some View {
         
-        TabView() {
-            ArtistView()
-                .tabItem {
-                    Label("Profile", systemImage: "person.fill.checkmark")
-                }
-                .fullScreenCover(isPresented:$needsAppOnboarding) {
-                    OnboardingView()
-                }
-                .fullScreenCover(isPresented:$isNotLoggedIn) {
-                    LoginView(tabSelection: .constant("LoginView"))
-                }
-            StatsView()
-                .tabItem {
-                    Label("Stats", systemImage: "person.fill.checkmark")
-                }
-            EditView()
-                .tabItem {
-                    Label("Edit", systemImage: "person.fill.checkmark")
-                }
-                
-        }
+        ArtistView()
+        
+//        TabView() {
+//            ArtistView()
+//                .tabItem {
+//                    Label("Profile", systemImage: "person.fill.checkmark")
+//                }
+//                .fullScreenCover(isPresented:$needsAppOnboarding) {
+//                    OnboardingView()
+//                }
+//                .fullScreenCover(isPresented:$isNotLoggedIn) {
+//                    LoginView(tabSelection: .constant("LoginView"))
+//                }
+//            StatsView()
+//                .tabItem {
+//                    Label("Stats", systemImage: "person.fill.checkmark")
+//                }
+//            EditView()
+//                .tabItem {
+//                    Label("Edit", systemImage: "person.fill.checkmark")
+//                }
+//
+//        }
     }
 }
 
@@ -45,5 +47,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(ArtistModelData())
     }
 }
