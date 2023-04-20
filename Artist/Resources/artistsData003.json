@@ -1,0 +1,63 @@
+[{
+    "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E9A7C70",
+    "name": "Default Electronic",
+    "dateEditedTS": 1672531200000,
+    "dateRegisteredTS": 1672531200000,
+    "isConfirmed": false,
+    "isPrimary": true,
+    "country": "Russia",
+    "city": "Saint-Petersburg",
+    "genrePrimary": "Electronic Music",
+    "genreSecondary": "Modular Wave",
+    "descriptionFull": "Large Text",
+    "descriptionShort": "Small Text",
+    "countFollowers": 10,
+    "countLikes": 101,
+    "mainImageName": "ElectronicTrio",
+    "mainImageURL": "https://disk.yandex.ru/i/UwJvmA9JAMyI6w",
+    "releases": [
+        {
+            "id": "8DDD5467-12B4-4983-8361-332007CEEB4D",
+            "name": "Can't get enough",
+            "type": "EP",
+            "isFeatured": true,
+            "dateEditedTS": 1672531200000,
+            "dateReleasedTS": 1672531200000,
+            "imageCoverName": "Album4",
+            "imageCoverURL": "https://disk.yandex.ru/i/QKOBWbBuW3eZ8g",
+            "labelName": "Errorgrid",
+            "tracks": [
+                {
+                    "id": "50EEE43A-4626-448A-87B8-4A7E426E5B4B",
+                    "number": 1,
+                    "trackName": "TÆT Coins For The Ghost",
+                    "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
+                    "favoritedCount": 1008
+                },
+                {
+                    "id": "7EF1A096-329F-4E86-BDB8-3C87FA8D2A12",
+                    "number": 2,
+                    "trackName": "TÆT Minus Five",
+                    "trackURL": "https://disk.yandex.ru/d/Jcna35sYXjA76Q",
+                    "favoritedCount": 1009
+                }
+            ]
+        }
+    ],
+    "posts": [
+        {
+            "id": "E07ABFD8-423B-4A5A-AEDB-EE3C3E9A7C70",
+            "dateEditedTS": 1679163555000,
+            "dateCreatedTS": 1679163555000,
+            "titleEN": "Almost finished",
+            "titleRU": "ProfileView",
+            "textEN": "Profile view is finished as a first draft.",
+            "textRU": "logic and integration of Onboarding.",
+            "imageName": "swiftUI",
+            "imageURL": "https://disk.yandex.ru/i/M5okSk2K7pDdFA",
+            "likeCount": 157,
+            "viewCount": 343,
+            "isFlagged": false
+        }
+    ]
+}]

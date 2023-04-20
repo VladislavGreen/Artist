@@ -9,12 +9,16 @@ import SwiftUI
 
 @main
 struct ArtistApp: App {
-    @StateObject private var artistModelData = ArtistModelData()
+    
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(artistModelData)
+                .environment(\.managedObjectContext, CoreDataManager.shared.context)
+        }
+        .onChange(of: scenePhase) { _ in
+            CoreDataManager.shared.saveContext()
         }
     }
 }

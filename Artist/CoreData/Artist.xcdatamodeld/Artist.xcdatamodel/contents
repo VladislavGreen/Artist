@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G320" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Artist" representedClassName="Artist" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="countFollowers" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="countLikes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="dateEditedTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateRegisteredTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionFull" optional="YES" attributeType="String"/>
+        <attribute name="descriptionShort" optional="YES" attributeType="String"/>
+        <attribute name="genrePrimary" optional="YES" attributeType="String"/>
+        <attribute name="genreSecondary" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isConfirmed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isPrimary" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="mainImageName" optional="YES" attributeType="String"/>
+        <attribute name="mainImageURL" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="ofArtist" inverseEntity="Post"/>
+        <relationship name="releases" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Release" inverseName="ofArtist" inverseEntity="Release"/>
+    </entity>
+    <entity name="Post" representedClassName="Post" syncable="YES">
+        <attribute name="dateCreatedTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateEditedTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="imageURL" optional="YES" attributeType="String"/>
+        <attribute name="isFlagged" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="likeCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="textEN" optional="YES" attributeType="String"/>
+        <attribute name="textRU" optional="YES" attributeType="String"/>
+        <attribute name="titleEN" optional="YES" attributeType="String"/>
+        <attribute name="titleRU" optional="YES" attributeType="String"/>
+        <attribute name="viewCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ofArtist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" inverseName="posts" inverseEntity="Artist"/>
+    </entity>
+    <entity name="Release" representedClassName="Release" syncable="YES">
+        <attribute name="dateEditedTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateReleasedTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageCoverName" optional="YES" attributeType="String"/>
+        <attribute name="imageCoverURL" optional="YES" attributeType="String"/>
+        <attribute name="isFeatured" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="labelName" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="ofArtist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" inverseName="releases" inverseEntity="Artist"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Track" inverseName="ofRelease" inverseEntity="Track"/>
+    </entity>
+    <entity name="Track" representedClassName="Track" syncable="YES">
+        <attribute name="favoritedCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trackName" optional="YES" attributeType="String"/>
+        <attribute name="trackURL" optional="YES" attributeType="String"/>
+        <relationship name="ofRelease" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Release" inverseName="tracks" inverseEntity="Release"/>
+    </entity>
+</model>

@@ -1,0 +1,189 @@
+[
+    {
+        "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E9A7C70",
+        "name": "Default Electronic",
+        "dateEditedTS": 1672531200000,
+        "dateRegisteredTS": 1672531200000,
+        "isConfirmed": false,
+        "isPrimary": true,
+        
+        "country": "Russia",
+        "city": "Saint-Petersburg",
+       
+        
+        "genrePrimary": "Electronic Music",
+        "genreSecondary": "Modular Wave",
+       
+        "descriptionFull": "Large Text",
+        "descriptionShort": "Small Text",
+        "countFollowers": 1,
+        "countLikes": 1,
+        "mainImageName": "ElectronicTrio",
+        "mainImageURL": "https://disk.yandex.ru/i/UwJvmA9JAMyI6w",
+        
+        "releases": [
+            {
+                "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E9A8C70",
+                "name": "Can't get enough",
+                "type": "EP",
+                "isFeatured": true,
+                "dateEditedTS": 1672531200000,
+                "dateReleasedTS": 1672531200000,
+                "imageCoverName": "Album4",
+                "imageCoverURL": "https://disk.yandex.ru/i/QKOBWbBuW3eZ8g",
+                "labelName": "Errorgrid",
+                "tracks": [
+                    {
+                        "id": "E07ABFD8-429B-6A6A-AEDB-EE4C9E9A7C70",
+                        "number": 1,
+                        "trackName": "TÆT Coins For The Ghost",
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
+                        "favoritedCount": 1008
+                    },
+                    {   "id": "E07ABAD8-429B-4A5A-AEDB-EE4C9E9A7C70",
+                        "number": 2,
+                        "trackName": "TÆT Minus Five",
+                        "trackURL": "https://disk.yandex.ru/d/Jcna35sYXjA76Q",
+                        "favoritedCount": 1009
+                    },
+                ]
+            },
+            {
+                "id": "E07ABFD8-429B-4A5A-AEAB-EE4C9E9A7C70",
+                "name": "Non stop",
+                "type": "Album",
+                "isFeatured": false,
+                "dateEditedTS": 1672531200000,
+                "dateReleasedTS": 1672531200000,
+                "imageCoverName": "Album3",
+                "imageCoverURL": "https://disk.yandex.ru/i/Vwk7wCAsuynMGg",
+                "labelName": "Errorgrid",
+                "tracks": [
+                    {   "id": "E07ABFD8-429B-4A7A-AEDB-EA4C9E9A7C70",
+                        "number": 1,
+                        "trackName": "TÆT Coins For The Ghost",
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
+                        "favoritedCount": 904
+                    },
+                    {   "id": "E07ABFD4-429B-4A6A-AEDB-EE4C9E9A7C70",
+                        "number": 2,
+                        "trackName": "TÆT Minus Five",
+                        "trackURL": "https://drive.google.com/uc?export=open&id=13x5qwRqCoV_keP3Zbc2tCCGeNuZEkPGK",
+                        "favoritedCount": 1000
+                    },
+                    {   "id": "E07BBFD8-329B-4A5A-AEDB-EE4C9E9A7C70",
+                        "number": 3,
+                        "trackName": "TÆT Back Beams",
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1C25-GQ4lJH-TMyeokLs2gt-ZfzCDDRNX",
+                        "favoritedCount": 2834
+                    },
+                ]
+            },
+            {
+                "id": "E07ABFD8-421B-4A5A-AEDB-EE2C9E9A7C70",
+                "name": "Nine Eight Seven",
+                "type": "Single",
+                "isFeatured": false,
+                "dateEditedTS": 1672531200000,
+                "dateReleasedTS": 1672531200000,
+                "imageCoverName": "Album2",
+                "imageCoverURL": "https://disk.yandex.ru/i/I24D7rZFGSBiyA",
+                "labelName": "Errorgrid",
+                "tracks": [
+                    {   "id": "E07ABFD8-429B-4A7A-AEDB-EE4C7E9A7C70",
+                        "number": 1,
+                        "trackName": "TÆT Coins For The Ghost",
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
+                        "favoritedCount": 904
+                    },
+                ]
+            },
+            {
+                "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E8A7C80",
+                "name": "Fantastic trip",
+                "type": "Album",
+                "isFeatured": true,
+                "dateEditedTS": 1672531200000,
+                "dateReleasedTS": 1672531200000,
+                "imageCoverName": "Album1",
+                "imageCoverURL": "ftp://raduga70:568249@ftp://raduga70.valuehost.ru:21/ArtistAppResourses/AlbumCover01.png",
+                "labelName": "Errorgrid",
+                "tracks": [
+                    {
+                        "id": "E07ABFD8-479B-4A9A-AEDB-EE4C9E9A7C70",
+                        "number": 1,
+                        "trackName": "TÆT Coins For The Ghost",
+                        "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
+                        "favoritedCount": 904
+                    },
+                    {
+                        "id": "E07ABFD8-429B-6A2A-AEDB-EE4C9E9A7C70",
+                        "number": 2,
+                        "trackName": "TÆT Minus Five",
+                        "trackURL": "https://drive.google.com/uc?export=open&id=13x5qwRqCoV_keP3Zbc2tCCGeNuZEkPGK",
+                        "favoritedCount": 1000
+                    },
+                ]
+            },
+        ],
+        
+        "posts": [
+            {
+                "id": "E07ABFD8-423B-4A5A-AEDB-EE3C3E9A7C70",
+                "dateEditedTS": 1679163555000,
+                "dateCreatedTS": 1679163555000,
+                "titleEN": "Almost finished basic ProfileView",
+                "titleRU": "ProfileView",
+                "textEN": "Profile view is finished as a first draft. Now it's time to think what's next. There's still a lot of things to do. Endless UI details, stats, data generation and data transfer logic and integration of a music player. Also we still need to fix Onboarding.",
+                "textRU": "Russian keyboart isn't working right now - so we're writing in English. Profile view is finished as a first draft. It's time to think what to do next? There are still a lot of things to do. Endless UI details, stats, data generation and data transfer logic and integration of a music player. Also we still need to fix Onboarding.",
+                "imageName": "swiftUI",
+                "imageURL": "https://disk.yandex.ru/i/M5okSk2K7pDdFA",
+                "likeCount": 157,
+                "viewCount": 343,
+                "isFlagged": false
+            },
+            {
+                "id": "E07ABFD8-429B-4A8A-AEDB-EE4C4E9A7C70",
+                "dateEditedTS": 1679163555000,
+                "dateCreatedTS": 1679163555000,
+                "titleEN": "ProfileView",
+                "titleRU": "ProfileView",
+                "textEN": "We're continuing exploring SwiftUI. A lot of experiments ahead! We're making our ProfileView right now",
+                "textRU": "Мы продолжаем изучать SwiftUI. Впереди много экспериментов! Прямо сы делаем наш ProfileView.",
+                "imageName": null,
+                "imageURL": null,
+                "likeCount": 169,
+                "viewCount": 3433,
+                "isFlagged": false
+            },
+            {
+                "id": "E07ABFD8-429B-4A5A-AEDB-EE4C1E6A7C70",
+                "dateEditedTS": 1672531200000,
+                "dateCreatedTS": 1672531200000,
+                "titleEN": "Welcome Joe",
+                "titleRU": "Добро пожаловать, Джо",
+                "textEN": "Our band has got member! Please meet the famous cyber drummer Joe! He is still learning playing drums but he looks fantastic and it's pretty enough as we think",
+                "textRU": "В нашей группе новый участник! Встречайте знаментого кибер-барабанщика Джо! Джо не умеет играть на барабанах, но выглядит потрясающе, и мы думаем, что этого вполне достаточно.",
+                "imageName": "Rockstar1",
+                "imageURL": "https://disk.yandex.ru/i/VN8zEH1a_PIJwQ",
+                "likeCount": 1694,
+                "viewCount": 8456,
+                "isFlagged": true
+            },
+            {
+                "id": "E11ABFD8-429B-4A5A-AEDB-EE4C9E9A7C70",
+                "dateEditedTS": 1672012800000,
+                "dateCreatedTS": 1672012800000,
+                "titleEN": "New album soon!",
+                "titleRU": "Скоро новый альбом!",
+                "textEN": "Awesome news! Our new album is about to be released on Errorgrid label next week! Stаy tuned and don't miss!",
+                "textRU": "Прекрасные новости! Наш новый альбом будет выпущен на следующей неделе лейблом Errorgrid! Следите за новостями и не пропустите!",
+                "imageName": "ElectronicTrio",
+                "imageURL": "https://disk.yandex.ru/i/UwJvmA9JAMyI6w",
+                "likeCount": 711,
+                "viewCount": 3991,
+                "isFlagged": true
+            }
+        ]
+    }
+]

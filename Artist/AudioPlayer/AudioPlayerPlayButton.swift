@@ -10,6 +10,7 @@ import SwiftUI
 
 struct AudioPlayerPlayButton: View {
     
+    @EnvironmentObject var artist: Artist
     @ObservedObject private var audioManager = StreamManager.shared
     @Binding var isMaximased: Bool
     
@@ -29,7 +30,7 @@ struct AudioPlayerPlayButton: View {
             }
             
             print("играем дефолтный плейлист")
-            let releases = ArtistModelData().artists[0].releases
+            let releases = Array(artist.releases! as Set<Release>)
             audioManager.playTopPlaylist(releases: releases)
             
         } label: {
