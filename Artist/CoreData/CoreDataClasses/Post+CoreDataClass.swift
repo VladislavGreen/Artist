@@ -34,7 +34,7 @@ public class Post: NSManagedObject, Codable {
         titleRU = try values.decode(String.self, forKey: .titleRU)
         viewCount = try values.decode(Int64.self, forKey: .viewCount)
         
-        ofArtist = try values.decode(Artist.self, forKey: .ofArtist)
+//        ofArtist = try values.decode(Artist.self, forKey: .ofArtist)
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -54,24 +54,25 @@ public class Post: NSManagedObject, Codable {
         try values.encode(titleRU, forKey: .titleRU)
         try values.encode(viewCount, forKey: .viewCount)
         
-        try values.encode(ofArtist, forKey: .ofArtist)
+//        try values.encode(ofArtist, forKey: .ofArtist)
     }
     
     private enum PostCodingKeys: CodingKey {
         case
-        dateCreatedTS,
-        dateEditedTS,
-        id,
-        imageName,
-        imageURL,
-        isFlagged,
-        likeCount,
-        textEN,
-        textRU,
-        titleEN,
-        titleRU,
-        viewCount,
-        ofArtist
+            dateCreatedTS,
+            dateEditedTS,
+            id,
+            imageName,
+            imageURL,
+            isFlagged,
+            likeCount,
+            textEN,
+            textRU,
+            titleEN,
+            titleRU,
+            viewCount
+        
+//        ofArtist
     }
     
 }

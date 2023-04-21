@@ -80,7 +80,7 @@ struct ContentView: View {
     }
     
     private func refreshData() {
-        CoreDataManager.shared.importJson(filename: "artistsData003.json")
+        CoreDataManager.shared.importJson(filename: "artistsData002.json")
     }
     
     private func exportDataBaseAsJson() {

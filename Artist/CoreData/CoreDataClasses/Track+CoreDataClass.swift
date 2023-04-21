@@ -22,13 +22,13 @@ public class Track: NSManagedObject, Codable {
         // Декодируем
         let values = try decoder.container(keyedBy: TrackCodingKeys.self)
         
-        favoritedCount = try values.decode(Int64.self, forKey: .id)
+        favoritedCount = try values.decode(Int64.self, forKey: .favoritedCount)
         id = try values.decode(UUID.self, forKey: .id)
         number = try values.decode(Int64.self, forKey: .number)
         trackName = try values.decode(String.self, forKey: .trackName)
         trackURL = try values.decode(String.self, forKey: .trackURL)
         
-        ofRelease = try values.decode(Release.self, forKey: .ofRelease)
+//        ofRelease = try values.decode(Release.self, forKey: .ofRelease)
     }
     
     // Confirming Encoding
@@ -43,17 +43,17 @@ public class Track: NSManagedObject, Codable {
         try values.encode(trackName, forKey: .trackName)
         try values.encode(trackURL, forKey: .trackURL)
         
-        try values.encode(ofRelease, forKey: .ofRelease)
+//        try values.encode(ofRelease, forKey: .ofRelease)
     }
     
     private enum TrackCodingKeys: CodingKey {
         case
-        favoritedCount,
-        id,
-        number,
-        trackName,
-        trackURL,
+            favoritedCount,
+            id,
+            number,
+            trackName,
+            trackURL
         
-        ofRelease
+//        ofRelease
     }
 }

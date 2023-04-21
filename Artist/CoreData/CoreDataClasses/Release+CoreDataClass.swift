@@ -33,7 +33,7 @@ public class Release: NSManagedObject, Codable {
         
         tracks = try values.decode(Set<Track>.self, forKey: .tracks)
         
-        ofArtist = try values.decode(Artist.self, forKey: .ofArtist)
+//        ofArtist = try values.decode(Artist.self, forKey: .ofArtist)
     }
     
     // Confirming Encoding
@@ -53,20 +53,21 @@ public class Release: NSManagedObject, Codable {
         
         try values.encode(tracks, forKey: .tracks)
         
-        try values.encode(ofArtist, forKey: .ofArtist)
+//        try values.encode(ofArtist, forKey: .ofArtist)
     }
     
     private enum ReleaseCodingKeys: CodingKey {
-        case dateEditedTS,
-             dateReleasedTS,
-             id,
-             imageCoverName,
-             imageCoverURL,
-             isFeatured,
-             labelName,
-             name,
-             type,
-             tracks,
-             ofArtist
+        case
+            dateEditedTS,
+            dateReleasedTS,
+            id,
+            imageCoverName,
+            imageCoverURL,
+            isFeatured,
+            labelName,
+            name,
+            type,
+            tracks
+//             ofArtist
     }
 }
