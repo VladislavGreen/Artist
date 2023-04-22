@@ -9,9 +9,6 @@ import SwiftUI
 
 struct ReleaseDetail: View {
     
-//    @EnvironmentObject var artistModelData: ArtistModelData
-//    @FetchRequest(sortDescriptors: []) var artists: FetchedResults<Artist>
-    
     @ObservedObject var audioManager = StreamManager.shared
     
     var release: Release
@@ -19,7 +16,7 @@ struct ReleaseDetail: View {
     var body: some View {
         VStack {
             HStack {
-                Text(release.name ?? "")
+                Text(release.name)
                     .font(CustomFont.heading)
                     .padding(8)
                     .lineLimit(1)
@@ -46,7 +43,11 @@ struct ReleaseDetail: View {
             }
             
             List {
-                ForEach(Array(release.tracks as! Set<Track>)) { track in
+                ForEach(
+                    Array(release.tracks as Set<Track>).sorted {
+                        $0.number < $1.number
+                    }
+                ) { track in
                     
                     HStack {
                         VStack {
@@ -60,7 +61,6 @@ struct ReleaseDetail: View {
                         }
                         
                         Button {
-                            
                             self.trackPlayButtonAction(track: track)
                             
                         } label: {
@@ -90,7 +90,7 @@ struct ReleaseDetail: View {
         
         var playlist: [Track] = []
         playlist.append(track)
-        // Ждём CoreData, что-бы найти остальные треки?
+        // Ждём CoreData, что-бы найти остальные треки? upd: забыл идею :-)
         
         if audioManager.currentTrack?.id == track.id,
            audioManager.isPlaying {
@@ -117,9 +117,12 @@ struct ReleaseDetail: View {
     
 }
 
+
+//#if DEBUG
 //struct ReleaseDetail_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ReleaseDetail(release: ArtistModelData().artists[0].releases[1])
 //            .environmentObject(ArtistModelData())
 //    }
 //}
+//#endif

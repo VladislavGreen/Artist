@@ -109,7 +109,7 @@ final class StreamManager: NSObject, ObservableObject {
         }
         
         let soundExtension = ".mp3"
-        prepareToPlay(url: track.trackURL!, soundExtension: soundExtension)
+        prepareToPlay(url: track.trackURL, soundExtension: soundExtension)
         
         isPlaying = true
         isPaused = false
@@ -179,7 +179,7 @@ final class StreamManager: NSObject, ObservableObject {
         var topPlaylist: [Track] = []
         
         releases.forEach { release in
-            let tracks = Array(release.tracks! as Set<Track>)
+            let tracks = Array(release.tracks as Set<Track>)
             tracks.forEach { track in
                 topPlaylist.append(track)
             }

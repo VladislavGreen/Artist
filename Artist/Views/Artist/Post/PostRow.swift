@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PostRow: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var post: Post
     @State var showingPostDetail = false
     
@@ -30,7 +32,7 @@ struct PostRow: View {
                 VStack(alignment: .leading, spacing: 4) {
                     
                     HStack {
-                        Text(post.titleEN ?? "")
+                        Text(post.title ?? "")
                             .font(CustomFont.subheading)
                             .lineLimit(1)
                         
@@ -42,11 +44,10 @@ struct PostRow: View {
                         }
                     }
                     
-                    Text(post.textEN ?? "")
+                    Text(post.text)
                         .lineLimit(2)
                         .truncationMode(.tail)
                 }
-                    
             }
             .padding(8)
             .cornerRadius(4)
@@ -56,10 +57,13 @@ struct PostRow: View {
         }
         .sheet(isPresented: $showingPostDetail) {
             PostDetail(post: post)
+            .environment(\.managedObjectContext, self.viewContext)
         }
     }
 }
 
+
+//#if DEBUG
 //struct PostRow_Previews: PreviewProvider {
 //    
 //    static var artists = ArtistModelData().artists
@@ -73,3 +77,4 @@ struct PostRow: View {
 //            
 //    }
 //}
+//#endif

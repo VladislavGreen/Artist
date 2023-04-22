@@ -16,7 +16,6 @@
 		A415733829C2017100E51DE0 /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733729C2017100E51DE0 /* PostRow.swift */; };
 		A415733A29C23A3D00E51DE0 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733929C23A3D00E51DE0 /* PostList.swift */; };
 		A415733C29C23D6000E51DE0 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733B29C23D6000E51DE0 /* PostDetail.swift */; };
-		A415733E29C4D85000E51DE0 /* FlagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415733D29C4D85000E51DE0 /* FlagButton.swift */; };
 		A415734229C623B400E51DE0 /* ReleaseHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415734129C623B400E51DE0 /* ReleaseHome.swift */; };
 		A415734429C62C1E00E51DE0 /* ReleaseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415734329C62C1E00E51DE0 /* ReleaseRow.swift */; };
 		A415734629C7575600E51DE0 /* ReleaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415734529C7575600E51DE0 /* ReleaseItem.swift */; };
@@ -80,7 +79,6 @@
 		A415733729C2017100E51DE0 /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
 		A415733929C23A3D00E51DE0 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		A415733B29C23D6000E51DE0 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
-		A415733D29C4D85000E51DE0 /* FlagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagButton.swift; sourceTree = "<group>"; };
 		A415734129C623B400E51DE0 /* ReleaseHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseHome.swift; sourceTree = "<group>"; };
 		A415734329C62C1E00E51DE0 /* ReleaseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRow.swift; sourceTree = "<group>"; };
 		A415734529C7575600E51DE0 /* ReleaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseItem.swift; sourceTree = "<group>"; };
@@ -163,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B6263329BA568600BCD739 /* ArtistView.swift */,
-				A415733F29C4D94D00E51DE0 /* ArtistHelpers */,
+				A415733F29C4D94D00E51DE0 /* ArtistViewHelpers */,
 				A415734029C6239700E51DE0 /* Post */,
 				A415734B29C8538900E51DE0 /* Release */,
 				A4C15A4F29CAD7E800914568 /* Profile */,
@@ -180,16 +178,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A415733F29C4D94D00E51DE0 /* ArtistHelpers */ = {
+		A415733F29C4D94D00E51DE0 /* ArtistViewHelpers */ = {
 			isa = PBXGroup;
 			children = (
 				A415733029C0E00800E51DE0 /* ScrollViewWrapper.swift */,
 				A415732E29C0C0B300E51DE0 /* AvatarImageView.swift */,
-				A415733D29C4D85000E51DE0 /* FlagButton.swift */,
 				A415734C29C85D1100E51DE0 /* FieldSeparator.swift */,
 				A4C15A5529CAE05A00914568 /* ProfileButton.swift */,
 			);
-			path = ArtistHelpers;
+			path = ArtistViewHelpers;
 			sourceTree = "<group>";
 		};
 		A415734029C6239700E51DE0 /* Post */ = {
@@ -205,8 +202,8 @@
 		A415734B29C8538900E51DE0 /* Release */ = {
 			isa = PBXGroup;
 			children = (
-				A415734129C623B400E51DE0 /* ReleaseHome.swift */,
 				A415734329C62C1E00E51DE0 /* ReleaseRow.swift */,
+				A415734129C623B400E51DE0 /* ReleaseHome.swift */,
 				A415734529C7575600E51DE0 /* ReleaseItem.swift */,
 				A415734729C840B700E51DE0 /* ReleaseDetail.swift */,
 				A415734929C8443100E51DE0 /* TrackRow.swift */,
@@ -489,7 +486,6 @@
 				A4075E0829CC4BA0007D3B5F /* AudioManager.swift in Sources */,
 				A415B98829E2EBDE00892364 /* Artist.xcdatamodeld in Sources */,
 				A4ABB4FB29E443790010EC5A /* Persistence.swift in Sources */,
-				A415733E29C4D85000E51DE0 /* FlagButton.swift in Sources */,
 				A4B6262329B7815000BCD739 /* WelcomeView.swift in Sources */,
 				A415733C29C23D6000E51DE0 /* PostDetail.swift in Sources */,
 				A4F52E1829F130CB00479075 /* CoreDataHelpers.swift in Sources */,

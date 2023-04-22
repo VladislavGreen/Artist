@@ -10,17 +10,14 @@ import SwiftUI
 
 struct ReleaseHome: View {
     
-//    @EnvironmentObject var artistModelData: ArtistModelData
-//    @FetchRequest(sortDescriptors: []) var artists: FetchedResults<Artist>
-    @EnvironmentObject var artist: Artist
+    var releases: [Release]
     
     var body: some View {
         NavigationView {
             List {
                 
                 ZStack{
-                    let allReleases = Array(artist.releases! as Set<Release>)
-                    let featuredReleases = allReleases.filter { $0.isFeatured }
+                    let featuredReleases = releases.filter { $0.isFeatured }
                     Image(featuredReleases[0].imageCoverName ?? "person")
                         .resizable()
                         .scaledToFill()
@@ -46,10 +43,10 @@ struct ReleaseHome: View {
                 }
                 .listRowInsets(EdgeInsets())
                 
-                var releaseTypes = sortReleases(artist: artist)
+                let releaseTypes = sortReleases(releases: releases)
                 
                 ForEach(releaseTypes.keys.sorted(), id: \.self) { key in
-                    ReleaseRow(releaseType: key, items: releaseTypes[key]!, isSortedByType: true)
+                    ReleaseRow(releaseType: key, releases: releaseTypes[key]!, isSortedByType: true)
                 }
                 .listRowInsets(EdgeInsets())
             }
@@ -58,20 +55,23 @@ struct ReleaseHome: View {
         }
     }
     
-    private func sortReleases(artist: Artist) -> [String: [Release]] {
+    private func sortReleases(releases: [Release]) -> [String: [Release]] {
         var releaseTypes: [String: [Release]] {
             Dictionary(
-                grouping: Array(artist.releases as! Set),
-                by: { $0.type ?? "Unsorted" }
+                grouping: releases,
+                by: { $0.type }
             )
         }
         return releaseTypes
     }
 }
 
+
+//#if DEBUG
 //struct ReleaseHome_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ReleaseHome()
 //            .environmentObject(ArtistModelData())
 //    }
 //}
+//#endif

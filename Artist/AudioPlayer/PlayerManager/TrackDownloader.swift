@@ -21,7 +21,7 @@ public class TrackDownloader {
     func downloadTrack (track: Track) {
         let urlString = track.trackURL
         
-        let encodedSoundString = urlString?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        let encodedSoundString = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         
         self.downloadAndSaveAudioFile(encodedSoundString!) { (url) in
             self.isDownloaded = true

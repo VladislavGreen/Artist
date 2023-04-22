@@ -23,12 +23,10 @@ extension Post {
     @NSManaged public var imageURL: String?
     @NSManaged public var isFlagged: Bool
     @NSManaged public var likeCount: Int64
-    @NSManaged public var textEN: String?
-    @NSManaged public var textRU: String?
-    @NSManaged public var titleEN: String?
-    @NSManaged public var titleRU: String?
+    @NSManaged public var text: String
+    @NSManaged public var title: String?
     @NSManaged public var viewCount: Int64
-    @NSManaged public var ofArtist: Artist?
+    @NSManaged public var ofArtist: Artist
 
 }
 

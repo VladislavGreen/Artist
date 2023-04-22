@@ -9,11 +9,9 @@ import SwiftUI
 
 struct ReleaseRow: View {
     
-    @EnvironmentObject var artist: Artist
-    var releaseType: String
-    var items: [Release]
+    var releaseType: String = "Any"
+    var releases: [Release]
     var isSortedByType: Bool = false
-    
     
     @State var showingReleases = false
     @State private var selectedRelease: Release? = nil
@@ -32,7 +30,7 @@ struct ReleaseRow: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 0) {
-                        ForEach(items) { release in
+                        ForEach(releases) { release in
                             NavigationLink {
                                 ReleaseDetail(release: release)
                             } label: {
@@ -50,12 +48,12 @@ struct ReleaseRow: View {
                     showingReleases.toggle()
                 }
                 .sheet(isPresented: $showingReleases) {
-                    ReleaseHome()
+                    ReleaseHome(releases: releases)
                 }
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 0) {
-                        ForEach(items) { release in
+                        ForEach(releases) { release in
                             ReleaseItem(release: release)
                             .onTapGesture {
                                 self.selectedRelease = release
@@ -73,6 +71,7 @@ struct ReleaseRow: View {
     }
 }
 
+//#if DEBUG
 //struct ReleaseRow_Previews: PreviewProvider {
 //    static var artists = ArtistModelData().artists
 //    
@@ -82,3 +81,4 @@ struct ReleaseRow: View {
 //            items: Array(artists[0].releases.prefix(3)), isSortedByType: true)
 //    }
 //}
+//#endif

@@ -19,17 +19,25 @@ struct ReleaseItem: View {
                 .resizable()
                 .frame(width: 104, height: 104)
                 .cornerRadius(4)
-            Text(release.name ?? "No name")
-                .foregroundColor(.textPrimary)
-                .font(.caption)
+            VStack {
+                Text(release.name)
+                #if DEBUG
+                Text(release.dateReleasedTS.formatted(date: .abbreviated, time: .omitted))
+                #endif
+            }
+            .foregroundColor(.textPrimary)
+            .font(.caption)
         }
         .padding(.leading, 16)
         .padding(.bottom, 16)
     }
 }
 
+
+//#if DEBUG
 //struct ReleaseItem_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ReleaseItem(release: ArtistModelData().artists[0].releases[0])
 //    }
 //}
+//#endif

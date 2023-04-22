@@ -9,56 +9,60 @@ import SwiftUI
 
 struct PostDetail: View {
     
-//    @EnvironmentObject var artistModelData: ArtistModelData
-    @EnvironmentObject var artist: Artist
-
-    
-    var post: Post
-    
-    var postIndex: Int {
-        Array(artist.posts! as Set<Post>).firstIndex(where: { $0.id == post.id })!
-    }
+    @Environment(\.managedObjectContext) private var viewContext
+   
+    @State private var flag = false
+    @State var post: Post
     
     var body: some View {
-
         
         ScrollView {
             
             HStack {
-                Text(post.titleEN ?? "No title")
+                Text(post.title ?? "No title")
                     .font(CustomFont.subheading)
                 
                 Spacer()
                 
-//                FlagButton(isSet: $artistModelData.artist.posts[postIndex].isFlagged)
-                
-//               🛑 let isFlagged = Array($artist.posts as! Set<Post>)[postIndex].isFlagged
-//                FlagButton(isSet: isFlagged)
+                Button {
+                    flag.toggle()
+                    post.isFlagged.toggle()
+                    CoreDataManager.shared.saveContext()
+                    viewContext.refreshAllObjects()
+
+                } label: {
+                    Label("Toggle Flag", systemImage: flag ? "flag.fill" : "flag")
+                        .labelStyle(.iconOnly)
+                        .foregroundColor(flag ? .yellow : .gray)
+                }
             }
             
-            if post.imageName != nil {
-                Image(post.imageName!)
+            if let imageName = post.imageName {
+                Image(imageName)
                     .resizable()
                     .clipShape(Rectangle())
                     .scaledToFit()
             }
             
-            Text(post.textEN ?? "No text")
+            Text(post.text)
                 .padding(.bottom, 12)
             Text("Discussion section")
                 
         }
         .padding(16)
-        .navigationTitle(post.titleEN ?? "No title")
+        .navigationTitle(post.title ?? "No title")
         .navigationBarTitleDisplayMode(.inline)
-                
-
+        .onAppear {
+            flag = post.isFlagged
+        }
     }
 }
 
+//#if DEBUG
 //struct PostDetail_Previews: PreviewProvider {
 //    static var previews: some View {
 //        PostDetail(post: ArtistModelData().artists[0].posts[1])
 //            .environmentObject(ArtistModelData())
 //    }
 //}
+//#endif

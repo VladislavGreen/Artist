@@ -28,10 +28,8 @@
         <attribute name="imageURL" optional="YES" attributeType="String"/>
         <attribute name="isFlagged" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="likeCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="textEN" optional="YES" attributeType="String"/>
-        <attribute name="textRU" optional="YES" attributeType="String"/>
-        <attribute name="titleEN" optional="YES" attributeType="String"/>
-        <attribute name="titleRU" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="viewCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="ofArtist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" inverseName="posts" inverseEntity="Artist"/>
     </entity>

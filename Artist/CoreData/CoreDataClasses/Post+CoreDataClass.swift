@@ -24,14 +24,12 @@ public class Post: NSManagedObject, Codable {
         dateCreatedTS = try values.decode(Date.self, forKey: .dateCreatedTS)
         dateEditedTS = try values.decode(Date.self, forKey: .dateEditedTS)
         id = try values.decode(UUID.self, forKey: .id)
-        imageName = try values.decode(String.self, forKey: .imageName)
-        imageURL = try values.decode(String.self, forKey: .imageURL)
+        imageName = try values.decodeIfPresent(String.self, forKey: .imageName)
+        imageURL = try values.decodeIfPresent(String.self, forKey: .imageURL)
         isFlagged = try values.decode(Bool.self, forKey: .isFlagged)
         likeCount = try values.decode(Int64.self, forKey: .likeCount)
-        textEN = try values.decode(String.self, forKey: .textEN)
-        textRU = try values.decode(String.self, forKey: .textRU)
-        titleEN = try values.decode(String.self, forKey: .titleEN)
-        titleRU = try values.decode(String.self, forKey: .titleRU)
+        text = try values.decode(String.self, forKey: .text)
+        title = try values.decodeIfPresent(String.self, forKey: .title)
         viewCount = try values.decode(Int64.self, forKey: .viewCount)
         
 //        ofArtist = try values.decode(Artist.self, forKey: .ofArtist)
@@ -48,10 +46,8 @@ public class Post: NSManagedObject, Codable {
         try values.encode(imageURL, forKey: .imageURL)
         try values.encode(isFlagged, forKey: .isFlagged)
         try values.encode(likeCount, forKey: .likeCount)
-        try values.encode(textEN, forKey: .textEN)
-        try values.encode(textRU, forKey: .textRU)
-        try values.encode(titleEN, forKey: .titleEN)
-        try values.encode(titleRU, forKey: .titleRU)
+        try values.encode(text, forKey: .text)
+        try values.encode(title, forKey: .title)
         try values.encode(viewCount, forKey: .viewCount)
         
 //        try values.encode(ofArtist, forKey: .ofArtist)
@@ -66,10 +62,8 @@ public class Post: NSManagedObject, Codable {
             imageURL,
             isFlagged,
             likeCount,
-            textEN,
-            textRU,
-            titleEN,
-            titleRU,
+            text,
+            title,
             viewCount
         
 //        ofArtist

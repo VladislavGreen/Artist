@@ -19,9 +19,9 @@ extension Track {
     @NSManaged public var favoritedCount: Int64
     @NSManaged public var id: UUID
     @NSManaged public var number: Int64
-    @NSManaged public var trackName: String?
-    @NSManaged public var trackURL: String?
-    @NSManaged public var ofRelease: Release?
+    @NSManaged public var trackName: String
+    @NSManaged public var trackURL: String
+    @NSManaged public var ofRelease: Release
 
 }
 

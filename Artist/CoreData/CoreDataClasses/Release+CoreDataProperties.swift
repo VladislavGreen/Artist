@@ -16,17 +16,17 @@ extension Release {
         return NSFetchRequest<Release>(entityName: "Release")
     }
 
-    @NSManaged public var dateEditedTS: Date?
-    @NSManaged public var dateReleasedTS: Date?
+    @NSManaged public var dateEditedTS: Date
+    @NSManaged public var dateReleasedTS: Date
     @NSManaged public var id: UUID
     @NSManaged public var imageCoverName: String?
     @NSManaged public var imageCoverURL: String?
     @NSManaged public var isFeatured: Bool
     @NSManaged public var labelName: String?
-    @NSManaged public var name: String?
-    @NSManaged public var type: String?
-    @NSManaged public var ofArtist: Artist?
-    @NSManaged public var tracks: Set<Track>?
+    @NSManaged public var name: String
+    @NSManaged public var type: String
+    @NSManaged public var ofArtist: Artist
+    @NSManaged public var tracks: Set<Track>
 }
 
 extension Release : Identifiable {}

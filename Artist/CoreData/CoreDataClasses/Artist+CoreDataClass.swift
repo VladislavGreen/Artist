@@ -23,25 +23,25 @@ public class Artist: NSManagedObject, Codable {
         // Декодируем
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        city = try values.decode(String.self, forKey: .city)
+        city = try values.decodeIfPresent(String.self, forKey: .city)
         countFollowers = try values.decode(Int64.self, forKey: .countFollowers)
         countLikes = try values.decode(Int64.self, forKey: .countLikes)
-        country = try values.decode(String.self, forKey: .country)
+        country = try values.decodeIfPresent(String.self, forKey: .country)
         dateEditedTS = try values.decode(Date.self, forKey: .dateEditedTS)
         dateRegisteredTS = try values.decode(Date.self, forKey: .dateRegisteredTS)
-        descriptionFull = try values.decode(String.self, forKey: .descriptionFull)
-        descriptionShort = try values.decode(String.self, forKey: .descriptionShort)
-        genrePrimary = try values.decode(String.self, forKey: .genrePrimary)
-        genreSecondary = try values.decode(String.self, forKey: .genreSecondary)
+        descriptionFull = try values.decodeIfPresent(String.self, forKey: .descriptionFull)
+        descriptionShort = try values.decodeIfPresent(String.self, forKey: .descriptionShort)
+        genrePrimary = try values.decodeIfPresent(String.self, forKey: .genrePrimary)
+        genreSecondary = try values.decodeIfPresent(String.self, forKey: .genreSecondary)
         id = try values.decode(UUID.self, forKey: .id)
         isConfirmed = try values.decode(Bool.self, forKey: .isConfirmed)
         isPrimary = try values.decode(Bool.self, forKey: .isPrimary)
-        mainImageName = try values.decode(String.self, forKey: .mainImageName)
-        mainImageURL = try values.decode(String.self, forKey: .mainImageURL)
+        mainImageName = try values.decodeIfPresent(String.self, forKey: .mainImageName)
+        mainImageURL = try values.decodeIfPresent(String.self, forKey: .mainImageURL)
         name = try values.decode(String.self, forKey: .name)
         
-        releases = try values.decode(Set<Release>.self, forKey: .releases)
-        posts = try values.decode(Set<Post>.self, forKey: .posts)
+        releases = try values.decodeIfPresent(Set<Release>.self, forKey: .releases)
+        posts = try values.decodeIfPresent(Set<Post>.self, forKey: .posts)
     }
     
     // Confirming Encoding

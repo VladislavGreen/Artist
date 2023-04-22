@@ -9,55 +9,56 @@ import SwiftUI
 
 struct PostList: View {
     
-    @Environment(\.managedObjectContext) var moContext
-    @FetchRequest(sortDescriptors: []) var artists: FetchedResults<Artist>
+    @AppStorage("defaultArtistName") var defaultArtistName: String?
     
-    @EnvironmentObject var artist: Artist
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [SortDescriptor(\.name)],
+        animation: .default)
+    private var artists: FetchedResults<Artist>
     
     @State private var showFlaggedOnly = false
     @State var isPreview = false
     @State var showingPosts = false
+    @State var showingDetail = false
     
-    var filteredPosts: [Post] {
-        Array(artist.posts! as Set<Post>).filter { (post: Post) in
-            (!showFlaggedOnly || post.isFlagged)
-        }
-    }
+    @State var posts: [Post]
     
     var body: some View {
         
         NavigationView {
             List {
-                
+
                 if !isPreview {
                     Toggle(isOn: $showFlaggedOnly) {
                         Text("Show flagged only")
                     }
                 }
-                
+
                 if isPreview {
-                    
+
                     FieldSeparator(title: "Recent News")
                         .onTapGesture {
                             showingPosts.toggle()
                         }
                         .sheet(isPresented: $showingPosts) {
-                            PostList(
-                                isPreview: false
-                            )
+                            PostList(isPreview: false, posts: posts)
+                                .environment(\.managedObjectContext, self.viewContext)
                         }
-                    
-                    ForEach(filteredPosts) { post in
+
+                    ForEach(posts) { post in
                         if post.isFlagged {
                             PostRow(post: post)
+                                .environment(\.managedObjectContext, self.viewContext)
                         }
                     }
                     .navigationBarTitleDisplayMode(.inline)
-                    
+
                 } else {
-                    ForEach(filteredPosts) { post in
+                    ForEach(posts) { post in
                         NavigationLink {
                             PostDetail(post: post)
+                                .environment(\.managedObjectContext, self.viewContext)
                         } label: {
                             PostRow(post: post)
                         }
@@ -66,13 +67,25 @@ struct PostList: View {
                 }
             }
             .listStyle(.plain)
-        }
+        } 
+        .onReceive(artists.first.publisher, perform: { _ in
+            self.posts = Array(artists.first?.posts as Set<Post>)
+                .sorted {
+                    $0.dateCreatedTS > $1.dateCreatedTS
+                }
+                .filter {
+                    (post: Post) in (!showFlaggedOnly || post.isFlagged)
+                }
+        })
     }
 }
 
+
+//#if DEBUG
 //struct PostList_Previews: PreviewProvider {
 //    static var previews: some View {
 //        PostList()
 //            .environmentObject(ArtistModelData())
 //    }
 //}
+//#endif

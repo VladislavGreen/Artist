@@ -19,7 +19,7 @@ struct TrackRow: View {
             Text("\(track.number)")
                 .padding(.leading, 8)
             
-            Text(track.trackName ?? "No name")
+            Text(track.trackName)
                 .lineLimit(1)
                 
             Spacer()
@@ -28,6 +28,8 @@ struct TrackRow: View {
     }
 }
 
+
+//#if DEBUG
 //struct TrackRow_Previews: PreviewProvider {
 ////    static var artists = ArtistModelData().artists
 //    
@@ -36,3 +38,4 @@ struct TrackRow: View {
 //        TrackRow(track: artists[0].releases[0].tracks[1])
 //    }
 //}
+//#endif

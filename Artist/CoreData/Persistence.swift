@@ -48,10 +48,8 @@ struct PersistenceController {
         post1.imageURL = "imageURL"
         post1.isFlagged = true
         post1.likeCount = 321
-        post1.textEN = "textENtextENtextENtextENtextENtextENtextENtextENtextENtextENtextENtextEN"
-        post1.textRU = "textRUtextRUtextRUtextRUtextRUtextRUtextRUtextRUtextRUtextRUtextRUtextRU"
-        post1.titleEN = "titleEN"
-        post1.titleRU = "titleRU"
+        post1.text = "textENtextENtextENtextENtextENtextENtextENtextENtextENtextENtextENtextEN"
+        post1.title = "titleEN"
         post1.viewCount = 87
         
         let artist1 = Artist(context: viewContext)

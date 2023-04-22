@@ -24,10 +24,10 @@ public class Release: NSManagedObject, Codable {
         dateEditedTS = try values.decode(Date.self, forKey: .dateEditedTS)
         dateReleasedTS = try values.decode(Date.self, forKey: .dateReleasedTS)
         id = try values.decode(UUID.self, forKey: .id)
-        imageCoverName = try values.decode(String.self, forKey: .imageCoverName)
-        imageCoverURL = try values.decode(String.self, forKey: .imageCoverURL)
+        imageCoverName = try values.decodeIfPresent(String.self, forKey: .imageCoverName)
+        imageCoverURL = try values.decodeIfPresent(String.self, forKey: .imageCoverURL)
         isFeatured = try values.decode(Bool.self, forKey: .isFeatured)
-        labelName = try values.decode(String.self, forKey: .labelName)
+        labelName = try values.decodeIfPresent(String.self, forKey: .labelName)
         name = try values.decode(String.self, forKey: .name)
         type = try values.decode(String.self, forKey: .type)
         

@@ -79,6 +79,7 @@ struct ContentView: View {
 //        }
     }
     
+    #if DEBUG
     private func refreshData() {
         CoreDataManager.shared.importJson(filename: "artistsData002.json")
     }
@@ -90,12 +91,15 @@ struct ContentView: View {
     private func clearDataBase() {
         CoreDataManager.shared.clearDatabase()
     }
+    #endif
 }
 
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+#endif
