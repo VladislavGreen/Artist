@@ -10,7 +10,7 @@ import LocalAuthentication
 import KeychainAccess
 
 
-struct LoginView: View {
+struct LoginViewOld: View {
     
     @Binding var tabSelection: String
     
@@ -172,8 +172,8 @@ struct LoginView: View {
     }
  }
 
-struct LoginView_Previews: PreviewProvider {
+struct LoginViewOld_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(tabSelection: .constant("LoginView"))
+        LoginViewOld(tabSelection: .constant("LoginView"))
     }
 }

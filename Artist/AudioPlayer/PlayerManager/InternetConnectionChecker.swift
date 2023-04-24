@@ -13,7 +13,6 @@ public class InternetConnectionChecker {
 
 
     private init() {
-
     }
 
     public static func isConnectedToNetwork() -> Bool {

@@ -17,7 +17,7 @@ struct OnboardingView: View {
                 .tag("WelcomeView")
             SignInView(tabSelection: $tabSelection)
                 .tag("SignInView")
-            LoginView(tabSelection: $tabSelection)
+            LoginViewOld(tabSelection: $tabSelection)
                 .tag("LoginView")
         }
         .tabViewStyle(PageTabViewStyle())

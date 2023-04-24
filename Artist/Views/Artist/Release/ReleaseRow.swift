@@ -15,7 +15,6 @@ struct ReleaseRow: View {
     
     @State var showingReleases = false
     @State private var selectedRelease: Release? = nil
-
     
     var body: some View {
         

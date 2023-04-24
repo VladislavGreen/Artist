@@ -57,7 +57,7 @@ struct PostRow: View {
         }
         .sheet(isPresented: $showingPostDetail) {
             PostDetail(post: post)
-            .environment(\.managedObjectContext, self.viewContext)
+                .environment(\.managedObjectContext, self.viewContext)
         }
     }
 }

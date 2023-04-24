@@ -12,10 +12,10 @@ struct PostList: View {
     @AppStorage("defaultArtistName") var defaultArtistName: String?
     
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(
-        sortDescriptors: [SortDescriptor(\.name)],
-        animation: .default)
-    private var artists: FetchedResults<Artist>
+//    @FetchRequest(
+//        sortDescriptors: [SortDescriptor(\.name)],
+//        animation: .default)
+//    private var artists: FetchedResults<Artist>
     
     @State private var showFlaggedOnly = false
     @State var isPreview = false
@@ -32,6 +32,32 @@ struct PostList: View {
                 if !isPreview {
                     Toggle(isOn: $showFlaggedOnly) {
                         Text("Show flagged only")
+                    }
+                    
+                    if showFlaggedOnly {
+                        ForEach(posts) { post in
+                            if post.isFlagged {
+                                NavigationLink {
+                                    PostDetail(post: post)
+                                        .environment(\.managedObjectContext, self.viewContext)
+                                } label: {
+                                    PostRow(post: post)
+                                        .environment(\.managedObjectContext, self.viewContext)
+                                }
+                            }
+                        }
+                        .navigationTitle("All news")
+                    } else {
+                        ForEach(posts) { post in
+                            NavigationLink {
+                                PostDetail(post: post)
+                                    .environment(\.managedObjectContext, self.viewContext)
+                            } label: {
+                                PostRow(post: post)
+                                    .environment(\.managedObjectContext, self.viewContext)
+                            }
+                        }
+                        .navigationTitle("All news")
                     }
                 }
 
@@ -53,30 +79,16 @@ struct PostList: View {
                         }
                     }
                     .navigationBarTitleDisplayMode(.inline)
-
-                } else {
-                    ForEach(posts) { post in
-                        NavigationLink {
-                            PostDetail(post: post)
-                                .environment(\.managedObjectContext, self.viewContext)
-                        } label: {
-                            PostRow(post: post)
-                        }
-                    }
-                    .navigationTitle("All news")
                 }
             }
             .listStyle(.plain)
         } 
-        .onReceive(artists.first.publisher, perform: { _ in
-            self.posts = Array(artists.first?.posts as Set<Post>)
-                .sorted {
-                    $0.dateCreatedTS > $1.dateCreatedTS
-                }
-                .filter {
-                    (post: Post) in (!showFlaggedOnly || post.isFlagged)
-                }
-        })
+//        .onReceive(artists.publisher, perform: { _ in
+//            self.posts = posts
+//                .filter {
+//                    (post: Post) in (!showFlaggedOnly || post.isFlagged)
+//                }
+//        })
     }
 }
 

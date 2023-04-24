@@ -20,7 +20,8 @@ struct PostDetail: View {
             
             HStack {
                 Text(post.title ?? "No title")
-                    .font(CustomFont.subheading)
+                    .font(CustomFont.subheading
+                )
                 
                 Spacer()
                 
