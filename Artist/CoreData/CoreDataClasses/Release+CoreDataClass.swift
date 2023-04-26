@@ -67,7 +67,7 @@ public class Release: NSManagedObject, Codable {
             labelName,
             name,
             type,
-            tracks
-//             ofArtist
+            tracks,
+            ofArtist
     }
 }

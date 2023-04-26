@@ -1,7 +1,7 @@
 [
     {
-        "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E9A7C70",
-        "name": "Default Electronic",
+        "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E9A7C99",
+        "name": "Electronic Default",
         "dateEditedTS": 1672531200000,
         "dateRegisteredTS": 1672531200000,
         "isConfirmed": false,
@@ -9,22 +9,20 @@
         
         "country": "Russia",
         "city": "Saint-Petersburg",
-       
         
         "genrePrimary": "Electronic Music",
         "genreSecondary": "Modular Wave",
        
         "descriptionFull": "Large Text",
         "descriptionShort": "Small Text",
-        "countFollowers": 1,
-        "countLikes": 1,
+        "countFollowers": 212,
+        "countLikes": 298,
         "mainImageName": "ElectronicTrio",
-        "mainImageURL": "https://disk.yandex.ru/i/UwJvmA9JAMyI6w",
-        
+        "mainImageURL": "https://drive.google.com/uc?export=open&id=1M893MdmN3phicZRKt8Npj6-R0r4HMYVk",
         "releases": [
             {
-                "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E9A8C70",
-                "name": "Can't get enough",
+                "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E9A8C10",
+                "name": "El Can't get enough",
                 "type": "EP",
                 "isFeatured": true,
                 "dateEditedTS": 1682531200000,
@@ -49,8 +47,8 @@
                 ]
             },
             {
-                "id": "E07ABFD8-429B-4A5A-AEAB-EE4C9E9A7C70",
-                "name": "Non stop",
+                "id": "E07ABFD8-429B-4A5A-AEAB-EE4C9E9A7C11",
+                "name": "El Non stop",
                 "type": "Album",
                 "isFeatured": false,
                 "dateEditedTS": 1672531200000,
@@ -80,8 +78,8 @@
                 ]
             },
             {
-                "id": "E07ABFD8-421B-4A5A-AEDB-EE2C9E9A7C70",
-                "name": "Nine Eight Seven",
+                "id": "E07ABFD8-421B-4A5A-AEDB-EE2C9E9A7C12",
+                "name": "El Nine Eight Seven",
                 "type": "Single",
                 "isFeatured": false,
                 "dateEditedTS": 1662531200000,
@@ -99,8 +97,8 @@
                 ]
             },
             {
-                "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E8A7C80",
-                "name": "Fantastic trip",
+                "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E8A7C13",
+                "name": "El Fantastic trip",
                 "type": "Album",
                 "isFeatured": true,
                 "dateEditedTS": 1652531200000,
@@ -132,55 +130,55 @@
                 "id": "E56ABFD8-423B-4A5A-AEDB-EE3C3E9A7C87",
                 "dateEditedTS": 1679173555000,
                 "dateCreatedTS": 1679173555000,
-                "title": "Almost finished basic ProfileView",
+                "title": "El Almost finished basic ProfileView",
                 "text": "Profile view is finished as a first draft. Now it's time to think what's next. There's still a lot of things to do. Endless UI details, stats, data generation and data transfer logic and integration of a music player. Also we still need to fix Onboarding.",
                 "imageName": "swiftUI",
                 "imageURL": "https://disk.yandex.ru/i/M5okSk2K7pDdFA",
                 "likeCount": 157,
-                "viewCount": 343,
+                "viewCount": 599,
                 "isFlagged": true
             },
             {
                 "id": "E07ABFD8-429B-3A8A-AEDB-EE4C4E9A7C70",
                 "dateEditedTS": 1679163555000,
                 "dateCreatedTS": 1679163555000,
-                "title": "ProfileView",
-                "text": "We're continuing exploring SwiftUI. A lot of experiments ahead! We're making our ProfileView right now",
+                "title": null,
+                "text": "El We're continuing exploring SwiftUI. A lot of experiments ahead! We're making our ProfileView right now",
                 "imageName": null,
                 "imageURL": null,
                 "likeCount": 169,
-                "viewCount": 3433,
+                "viewCount": 443,
                 "isFlagged": false
             },
             {
                 "id": "E07ABFD8-429B-4A5A-AEDB-EE4C1E6A7C72",
                 "dateEditedTS": 1672541200000,
                 "dateCreatedTS": 1672541200000,
-                "title": "Welcome Joe",
+                "title": "El Welcome Joe",
                 "text": "Our band has got member! Please meet the famous cyber drummer Joe! He is still learning playing drums but he looks fantastic and it's pretty enough as we think В нашей группе новый участник! Встречайте знаментого кибер-барабанщика Джо! Джо не умеет играть на барабанах, но выглядит потрясающе, и мы думаем, что этого вполне достаточно.",
                 "imageName": "Rockstar1",
                 "imageURL": "https://disk.yandex.ru/i/VN8zEH1a_PIJwQ",
-                "likeCount": 1694,
-                "viewCount": 8456,
+                "likeCount": 284,
+                "viewCount": 845,
                 "isFlagged": true
             },
             {
                 "id": "E11ABFD8-429B-4A5A-AEDB-EE4C9E9A7C70",
                 "dateEditedTS": 1672012800000,
                 "dateCreatedTS": 1672012800000,
-                "title": "New album soon!",
+                "title": "El New album soon!",
                 "text": "Awesome news! Our new album is about to be released on Errorgrid label next week! Stаy tuned and don't miss! Прекрасные новости! Наш новый альбом будет выпущен на следующей неделе лейблом Errorgrid! Следите за новостями и не пропустите!",
                 "imageName": "ElectronicTrio",
                 "imageURL": "https://disk.yandex.ru/i/UwJvmA9JAMyI6w",
-                "likeCount": 711,
-                "viewCount": 3991,
+                "likeCount": 71,
+                "viewCount": 213,
                 "isFlagged": true
             }
         ]
     },
     {
         "id": "E04ABFD6-429B-4A5A-AEDB-EE7C9E9A7C70",
-        "name": "Default Rock",
+        "name": "Rock Default",
         "dateEditedTS": 1677531200000,
         "dateRegisteredTS": 1677531200000,
         "isConfirmed": false,
@@ -195,15 +193,15 @@
        
         "descriptionFull": "Large Text",
         "descriptionShort": "Small Text",
-        "countFollowers": 7,
-        "countLikes": 17,
+        "countFollowers": 117,
+        "countLikes": 177,
         "mainImageName": "Rockstar2",
-        "mainImageURL": "https://disk.yandex.ru/i/UwJvmA9JAMyI6w",
+        "mainImageURL": "https://drive.google.com/uc?export=open&id=1ePbX4I2fMf_sYvy5EoT-gVMNh-l3C-FI",
         
         "releases": [
             {
-                "id": "E07ABFD8-429B-4A3A-AEDB-EE4C7E9A8C70",
-                "name": "Can't get enough",
+                "id": "E07ABFD8-429B-4A3A-AEDB-EE4C7E9A8C00",
+                "name": "Rock Can't get enough",
                 "type": "EP",
                 "isFeatured": true,
                 "dateEditedTS": 1682571200000,
@@ -213,7 +211,7 @@
                 "labelName": "Errorgrid",
                 "tracks": [
                     {
-                        "id": "E07ABFD8-429B-6A6A-AEDB-EE4C9E9A7C70",
+                        "id": "E07ABFD8-429B-6A6A-AEDB-EE4C9E9A7C01",
                         "number": 1,
                         "trackName": "TÆT Coins For The Ghost",
                         "trackURL": "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4",
@@ -228,8 +226,8 @@
                 ]
             },
             {
-                "id": "E07ABFD8-429B-4A5A-AEAB-EE4C9E9A7C70",
-                "name": "Non stop",
+                "id": "E07ABFD8-429B-4A5A-AEAB-EE4C9E9A7C01",
+                "name": "Rock Non stop",
                 "type": "Album",
                 "isFeatured": false,
                 "dateEditedTS": 1672531200000,
@@ -259,8 +257,8 @@
                 ]
             },
             {
-                "id": "E07ABFD8-421B-4A5A-AEDB-EE2C9E9A7C70",
-                "name": "Nine Eight Seven",
+                "id": "E07ABFD8-421B-4A5A-AEDB-EE2C9E9A7C02",
+                "name": "Rock Nine Eight Seven",
                 "type": "Single",
                 "isFeatured": false,
                 "dateEditedTS": 1662531200000,
@@ -278,8 +276,8 @@
                 ]
             },
             {
-                "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E8A7C80",
-                "name": "Fantastic trip",
+                "id": "E07ABFD8-429B-4A5A-AEDB-EE4C9E8A7C03",
+                "name": "Rock Fantastic trip",
                 "type": "Album",
                 "isFeatured": true,
                 "dateEditedTS": 1652531200000,
@@ -311,48 +309,48 @@
                 "id": "E56ABFD8-483B-4A1A-AEDB-EE3C3E9A7C87",
                 "dateEditedTS": 1679173555000,
                 "dateCreatedTS": 1679173555000,
-                "title": "Almost finished basic ProfileView",
+                "title": "Rock Almost finished basic ProfileView",
                 "text": "Profile view is finished as a first draft. Now it's time to think what's next. There's still a lot of things to do. Endless UI details, stats, data generation and data transfer logic and integration of a music player. Also we still need to fix Onboarding.",
                 "imageName": "swiftUI",
                 "imageURL": "https://disk.yandex.ru/i/M5okSk2K7pDdFA",
                 "likeCount": 17,
-                "viewCount": 33,
+                "viewCount": 51,
                 "isFlagged": true
             },
             {
                 "id": "E07ABFD8-229B-3A8A-AEDB-EE4C4E9A7C70",
                 "dateEditedTS": 1679163555000,
                 "dateCreatedTS": 1679163555000,
-                "title": "ProfileView",
+                "title": "Rock ProfileView",
                 "text": "We're continuing exploring SwiftUI. A lot of experiments ahead! We're making our ProfileView right now",
                 "imageName": null,
                 "imageURL": null,
-                "likeCount": 44,
-                "viewCount": 334,
+                "likeCount": 4,
+                "viewCount": 12,
                 "isFlagged": false
             },
             {
                 "id": "E07ABFD8-469B-4A5A-AEDB-EE4C1E6A7C72",
                 "dateEditedTS": 1672541200000,
                 "dateCreatedTS": 1672541200000,
-                "title": "Welcome Joe",
+                "title": "Rock Welcome Joe",
                 "text": "Our band has got member! Please meet the famous cyber drummer Joe! He is still learning playing drums but he looks fantastic and it's pretty enough as we think В нашей группе новый участник! Встречайте знаментого кибер-барабанщика Джо! Джо не умеет играть на барабанах, но выглядит потрясающе, и мы думаем, что этого вполне достаточно.",
                 "imageName": "Rockstar1",
                 "imageURL": "https://disk.yandex.ru/i/VN8zEH1a_PIJwQ",
                 "likeCount": 14,
-                "viewCount": 86,
+                "viewCount": 42,
                 "isFlagged": true
             },
             {
                 "id": "E11ABFD8-429B-4A5A-AEDB-EE4C9E9A7C70",
                 "dateEditedTS": 1672012800000,
                 "dateCreatedTS": 1672012800000,
-                "title": "New album soon!",
+                "title": "Rock New album soon!",
                 "text": "Awesome news! Our new album is about to be released on Errorgrid label next week! Stаy tuned and don't miss! Прекрасные новости! Наш новый альбом будет выпущен на следующей неделе лейблом Errorgrid! Следите за новостями и не пропустите!",
                 "imageName": "ElectronicTrio",
                 "imageURL": "https://disk.yandex.ru/i/UwJvmA9JAMyI6w",
-                "likeCount": 71,
-                "viewCount": 391,
+                "likeCount": 7,
+                "viewCount": 21,
                 "isFlagged": true
             }
         ]

@@ -11,9 +11,15 @@ import CoreData
 
 struct ArtistView: View {
     
-    var artist: Artist
+//    var artist: Artist
     
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [SortDescriptor(\.name, order: .reverse)],
+        animation: .default)
+    private var artists: FetchedResults<Artist>
+    
+    @AppStorage("defaultArtistName") var defaultArtistName: String?
     
     @State private var showingReleases = false
     @State private var showingLogin = false
@@ -22,6 +28,9 @@ struct ArtistView: View {
     @ObservedObject var audioManager = StreamManager.shared
     
     var body: some View {
+        
+        // 🛑 СДЕЛАТЬ ПРОВЕРКУ
+        let artist = artists.first!
         
         ZStack {
             
@@ -51,8 +60,7 @@ struct ArtistView: View {
             .padding(8)
             
             VStack {
-                
-                AvatarImageView(imageName: artist.mainImageName ?? "person")
+                AvatarImageView(imageName: artists.first?.mainImageName ?? "Ono")
                     .ignoresSafeArea(edges: .horizontal)
                     .blur(radius: scrollOffset/90)
                     .opacity(90 / scrollOffset)
@@ -62,9 +70,8 @@ struct ArtistView: View {
             ObservableScrollView(scrollOffset: $scrollOffset) { proxy in
 
                 VStack {
-
                     ZStack {
-                        AvatarImageView(imageName: artist.mainImageName ?? "person")
+                        AvatarImageView(imageName: artists.first?.mainImageName ?? "Ono")
                             .ignoresSafeArea(edges: .horizontal)
                             .opacity(0)
                         
@@ -74,7 +81,7 @@ struct ArtistView: View {
                                 audioManager.pause()
                                 return
                             }
-                            if let releases = artist.releases {
+                            if let releases = artists.first?.releases {
                                 audioManager.playTopPlaylist(releases: Array(releases))
                             }
                         }) {
@@ -88,18 +95,17 @@ struct ArtistView: View {
                     }
 
                     VStack {
-
                         VStack {
-                            Text((artist.name) + "Rockstar Rockstarovitch ")
+                            Text(artists.first?.name ?? "")
                                 .font(CustomFont.title)
                                 .foregroundColor(.white)
                                 .bold()
                                 .padding(4)
                             HStack {
-                                Text("Main Genre")
+                                Text(artists.first?.genrePrimary ?? "")
                                     .font(CustomFont.subheading)
                                     .foregroundColor(.white)
-                                Text("\(scrollOffset)")
+//                                Text("\(scrollOffset)")
                             }
                         }
                         .foregroundColor(.textTertiary)
@@ -107,29 +113,22 @@ struct ArtistView: View {
                         .frame(height: 0)
 
                         VStack {
-
-                            if let releases = artist.releases {
-                                ReleaseRow(
-                                    releases: Array(releases as Set<Release>).sorted {
-                                        $0.dateReleasedTS > $1.dateReleasedTS
-                                    },
-                                    isSortedByType: false
-                                )
-                                .environment(\.managedObjectContext, self.viewContext)
-                            } else {
-                                Text("Пока релизов нет")
-                            }
-
-                            PostList (
-                                isPreview: true,
-                                posts: Array(artist.posts ?? []).sorted {
+                            if artists.first != nil {
+                                if let releases: [Release] = Array(artists.first?.releases! ?? []) {
+                                    ReleaseRow(releases: releases)
+//                                        .environment(\.managedObjectContext, self.viewContext)
+                                }
+                                
+                                let posts: [Post] = Array(artists.first?.posts! ?? []).sorted {
                                     $0.dateCreatedTS > $1.dateCreatedTS
                                 }
-                            )
-                            .environment(\.managedObjectContext, self.viewContext)
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .scrollDisabled(true)
-
+                                if let posts {
+                                    PostList(artist: artist, posts: posts, isPreview: true)
+                                        .environment(\.managedObjectContext, self.viewContext)
+                                        .frame(minWidth: 0, maxWidth: .infinity)
+                                        .scrollDisabled(true)
+                                }
+                            }
                             Text("2023, Artist App")
                         }
                     }
@@ -142,6 +141,18 @@ struct ArtistView: View {
                 AudioPlayerView()
             }
             .zIndex(1)
+        }
+        .onChange(of: defaultArtistName ?? "") { value in
+            print("🆔 onChange ArtistView: Дефолтный артист: \(defaultArtistName)")
+            artists.nsPredicate = defaultArtistName?.isEmpty ?? true
+            ? nil
+            : NSPredicate(format: "name == %@", value)
+        }
+        .onAppear {
+            print("🆔 onAppear ArtistView: Дефолтный артист: \(defaultArtistName)")
+            artists.nsPredicate = defaultArtistName?.isEmpty ?? true
+            ? nil
+            : NSPredicate(format: "name == %@", defaultArtistName!)
         }
     }
 }

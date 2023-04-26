@@ -16,10 +16,20 @@ class CoreDataManager {
     static let shared = CoreDataManager()
     private init(){}
     
+    private let fileURL = URL(
+        fileURLWithPath: "Artists",
+        relativeTo: FileManager.default.urls(
+            for: .documentDirectory,
+            in: .userDomainMask
+        )[0]
+    ).appendingPathExtension("json")
+    
+    
     func saveContext () {
         if context.hasChanges {
             do {
                 try context.save()
+                print("Saving context")
             } catch {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
@@ -27,6 +37,8 @@ class CoreDataManager {
         }
     }
     
+    
+    // Чтение данных из файла JSON из ХCode (дефолтная база)
     func importJson(filename: String) {
         guard let url = Bundle.main.url(forResource: filename, withExtension: nil)
         else {
@@ -39,7 +51,7 @@ class CoreDataManager {
             decoder.userInfo[.contextUserInfoKey] = context
             decoder.dateDecodingStrategy = .millisecondsSince1970
             let artistsImported = try decoder.decode([Artist].self, from: jsonData)
-            print("♻️ Обновляем CoreData из JSON")
+            print("♻️ Обновляем CoreData из \(filename)")
             saveContext()
             checkDuplicates(artistsImported)
         } catch {
@@ -48,6 +60,7 @@ class CoreDataManager {
         }
     }
     
+    // Проверка дубликатов
     func checkDuplicates(_ artists: [Artist]) {
 
         // Проверка нет-ли уже такой сущности (по ID)
@@ -85,6 +98,8 @@ class CoreDataManager {
         print("❌ Всё удалено")
     }
     
+    
+    // Экспорт данных из CoreData в виде JSON в виде нового файла
     func exportCoreData() {
         do {
             // 1 Fetching
@@ -112,6 +127,59 @@ class CoreDataManager {
             }
         } catch {
             print(error.localizedDescription)
+        }
+    }
+
+    
+    // Сохранение данных в файловую систему в виде JSON
+    func saveData() {
+        self.saveContext()
+        do {
+            // 1 Fetching
+            if let entityName = Artist.entity().name {
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+                let items = try context.fetch(request).compactMap {
+                    $0 as? Artist
+                    // Здесь можно будет использовать предикаты (если данных много) и отображать прогресс
+                }
+                
+                // 2 Конвертируем в JSON
+                let jsonData = try JSONEncoder().encode(items)
+                if let jsonString = String(data: jsonData, encoding: .utf8) {
+//                    print("✅ Данные после конвертации в JSON:  \(jsonString)")
+                    
+                    // 3 Сохраняем
+
+                    do {
+                        try jsonString.write(to: fileURL, atomically: true, encoding: .utf8)
+                        print("♻️ Сохраняем CoreData в Artists.json")
+                    } catch {
+                        print("Не хаватает свободного места?")
+                    }
+
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    
+    // Чтение данных JSON из файловой системы
+    func loadData() {
+
+        do {
+            let jsonData = try Data(contentsOf: fileURL)
+            let decoder = JSONDecoder()
+            decoder.userInfo[.contextUserInfoKey] = context
+            decoder.dateDecodingStrategy = .millisecondsSince1970
+            let artistsImported = try decoder.decode([Artist].self, from: jsonData)
+            print("♻️ Обновляем CoreData из Artists.json")
+            saveContext()
+            checkDuplicates(artistsImported)
+        } catch {
+            print("Что-то пошло не так")
+            print(error)
         }
     }
     

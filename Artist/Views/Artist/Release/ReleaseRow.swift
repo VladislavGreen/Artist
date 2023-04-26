@@ -9,9 +9,16 @@ import SwiftUI
 
 struct ReleaseRow: View {
     
-    var releaseType: String = "Any"
+//    var artist: Artist
+    
+//    @Environment(\.managedObjectContext) private var viewContext
+//    @FetchRequest(
+//        sortDescriptors: [SortDescriptor(\.dateReleasedTS, order: .reverse)],
+////        predicate: NSPredicate(format: "ofArtist = %@", artist),
+//        animation: .default)
+//    private var releases: FetchedResults<Release>
+    
     var releases: [Release]
-    var isSortedByType: Bool = false
     
     @State var showingReleases = false
     @State private var selectedRelease: Release? = nil
@@ -19,54 +26,35 @@ struct ReleaseRow: View {
     var body: some View {
         
         VStack(alignment: .leading) {
+                
+            FieldSeparator(title: "Discography")
+            .onTapGesture {
+                showingReleases.toggle()
+            }
+            .sheet(isPresented: $showingReleases) {
+                ReleaseHome(releases: Array(releases))
+            }
             
-            if isSortedByType {
-                
-                Text(releaseType + "s")
-                    .font(CustomFont.heading)
-                    .padding(.leading, 16)
-                    .padding(.top, 16)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .top, spacing: 0) {
-                        ForEach(releases) { release in
-                            NavigationLink {
-                                ReleaseDetail(release: release)
-                            } label: {
-                                ReleaseItem(release: release)
-                            }
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(alignment: .top, spacing: 0) {
+                    ForEach(releases) { release in
+                        ReleaseItem(release: release)
+                        .onTapGesture {
+                            self.selectedRelease = release
                         }
                     }
-                }
-                .frame(height: 140)
-                
-            } else {
-                
-                FieldSeparator(title: "Discography")
-                .onTapGesture {
-                    showingReleases.toggle()
-                }
-                .sheet(isPresented: $showingReleases) {
-                    ReleaseHome(releases: releases)
-                }
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .top, spacing: 0) {
-                        ForEach(releases) { release in
-                            ReleaseItem(release: release)
-                            .onTapGesture {
-                                self.selectedRelease = release
-                            }
-                        }
-                    }
-                    
-                }
-                .frame(height: 124)
-                .sheet(item: $selectedRelease) { release in
-                    ReleaseDetail(release: release)
                 }
             }
+            .frame(height: 124)
+            .sheet(item: $selectedRelease) { release in
+                ReleaseDetail(release: release)
+            }
         }
+//         НЕ ПОЛУЧАЕТ ПРЕДИКАТА ПРИ ЗАПУСКЕ ПРИЛОЖЕНИЯ
+//        .onAppear {
+//            print("🆔 onAppear Release артист: \(artist.name)")
+//            releases.nsPredicate = NSPredicate(format: "ofArtist == %@", artist)
+//        }
     }
 }
 

@@ -7,23 +7,34 @@
 
 import SwiftUI
 import Charts
+import Foundation
 
 
 struct StatsView: View {
     
-    var artist: Artist
+//    var artist: Artist
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [SortDescriptor(\.name, order: .reverse)],
+        animation: .default)
+    private var artists: FetchedResults<Artist>
+    
+    @AppStorage("defaultArtistName") var defaultArtistName: String?
     
     @State var releasesData: [ReleaseTotalFavorited] = []
     @State var tracksData: [TrackTotalFavorited] = []
     @State var moreThenFiveTracks: Bool = false
-    @State var postViewsLikes: [PostViewsLikes] = []
+    @State var postsData: [PostViewsLikes] = []
+    @State var moreThenFivePosts: Bool = false
     
     var body: some View {
+        let artist = artists.first!
         
-        VStack {
+        ScrollView {
             
             Text("Ого! У \(artist.name) уже \(artist.countFollowers) слушателей")
-                .padding(.vertical, 48)
+                .foregroundColor(.accentColor)
+                .padding(.bottom, 16)
             
             VStack {
                 Text("Количество прослушиваний:")
@@ -32,12 +43,10 @@ struct StatsView: View {
                         x: .value("Plays", $0.amountFavoritedTracks),
                         y: .value("Name", $0.name)
                     )
-                    
                 }
-                .frame(height: CGFloat(releasesData.count*54))
                 .foregroundColor(.red)
             }
-            .frame(height: 250)
+            .frame(height: 200)
             
             VStack {
                 Text(moreThenFiveTracks ? "Пять самых популярных треков:" : "Популярные треки:")
@@ -50,19 +59,80 @@ struct StatsView: View {
                 }
                 .foregroundColor(.accentColor)
             }
-            .frame(height: 300)
+            .frame(height: 240)
+            
+            VStack {
+                Text(moreThenFivePosts ? "Пять самых популярных записей:" : "Популярные записи:")
+                    
+                Chart(moreThenFivePosts ? postsData[0...4] : postsData[0..<postsData.count]) {
+                    BarMark(
+                        x: .value("Views", $0.value),
+                        y: .value("Name", $0.text)
+                    )
+                    .foregroundStyle(by: .value("Category", $0.category))
+                    .position(by: .value("Catagory", $0.category))
+                }
+            }
+            .frame(height: 240)
             
         }
         .padding(16)
         .onAppear {
+            print("🆔 onAppear StatsView: Дефолтный артист: \(defaultArtistName)")
+            artists.nsPredicate = defaultArtistName?.isEmpty ?? true
+            ? nil
+            : NSPredicate(format: "name == %@", defaultArtistName!)
+            
             getReleasesStats(artist: artist)
-            for track in tracksData {
-                print(track.id)
+            getPostsStats(artist: artist)
+        }
+//        .onChange(of: defaultArtistName ?? "") { value in
+//            print("🆔 onChange StatsView: Дефолтный артист: \(defaultArtistName)")
+//            artists.nsPredicate = defaultArtistName?.isEmpty ?? true
+//            ? nil
+//            : NSPredicate(format: "name == %@", value)
+//        }
+    }
+    
+    // Получение статистики записей в ленте новостей (Posts)
+    private func getPostsStats(artist: Artist) {
+        guard let postsSet = artist.posts else { return }
+        let posts = Array(postsSet)
+        postsData = []
+        
+        for post in posts {
+            var text = ""
+            if post.title != nil {
+                text = post.title!
+            } else {
+                let originalText = post.text
+                let length = originalText.index(originalText.startIndex, offsetBy: 16)
+                text = "..." + String(originalText[...length]) + "..."
             }
+            let postLikesData = PostViewsLikes(
+                id: post.id,
+                text: text,
+                value: post.likeCount,
+                category: "Понравилось"
+            )
+            let postViewsData = PostViewsLikes(
+                id: post.id,
+                text: text,
+                value: post.viewCount,
+                category: "Просмотры"
+            )
+            postsData.append(postLikesData)
+            postsData.append(postViewsData)
+        }
+        if posts.count > 5 {
+            moreThenFivePosts = true
+        }
+        postsData = postsData.sorted {
+            $0.value > $1.value
         }
     }
     
-    // Как часто релиз и трек был отмечен слушателем
+    // Как часто релиз и трек был отмечен слушателем (Favorited)
     private func getReleasesStats(artist: Artist) {
         guard let releasesSet = artist.releases else { return }
         let releases = Array(releasesSet as Set<Release>)

@@ -23,7 +23,8 @@ struct TrackTotalFavorited: Identifiable {
 struct PostViewsLikes: Identifiable {
     var id: UUID
     var text: String
-    var likes: Int64
-    var views: Int64
+    var value: Int64
+    var category: String
 }
+
 

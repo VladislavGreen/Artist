@@ -18,22 +18,87 @@ struct EditView: View {
         animation: .default)
     private var artists: FetchedResults<Artist>
     
-//    @AppStorage("needsAppOnboarding") private var needsAppOnboarding: Bool = true
-//    @AppStorage("isNotLoggedIn") private var isNotLoggedIn = false
+    @State private var showingProfileEditor = false
+    @State private var showingArtistEditor = false
+    @State private var isNewArtist: Bool = true
+    
     
     var body: some View {
         
-        VStack{
+        Form {
             
-            Text("Select an artist:")
+            Section(header: Text("Выберите артиста:")) {
+                
+                Picker(selection: $defaultArtistName, label: Text("Выбрать:")) {
+                    if artists.count == 0 {
+                        Text("Ничего не загружено").tag(nil as String?)
+                    }
+                    ForEach(artists) { artist in
+                        Text(artist.name).tag(artist.name as String?)
+                            .foregroundColor(.accentColor)
+                    }
+                }
+                .pickerStyle(.menu)
+                .labelsHidden()
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                .clipped()
+            }
+
+            Section {
+                Button(action: {
+                    showingArtistEditor.toggle()
+                    isNewArtist = false
+                }) {
+                    Text("Редактировать " + (defaultArtistName ?? ""))
+                }
+                .sheet(isPresented: $showingArtistEditor) {
+                    ArtistEditorView(isNewArtist: $isNewArtist)
+                        .environment(\.managedObjectContext, self.viewContext)
+                }
+                
+                Button(action: {
+                    showingArtistEditor.toggle()
+                    isNewArtist = true
+                }) {
+                    Text("Добавить нового артиста")
+                }
+                .sheet(isPresented: $showingArtistEditor) {
+                    ArtistEditorView(isNewArtist: $isNewArtist)
+                        .environment(\.managedObjectContext, self.viewContext)
+                }
+            }
             
-            Picker(selection: $defaultArtistName, label: Text("Select an artist")) {
-                if artists.count == 0 {
-                    Text("No artist loaded").tag(nil as String?)
+            Section(header: Text("Мои данные")) {
+                Button(action: {
+                    showingProfileEditor.toggle()
+                }) {
+                    Text("Изменить")
                 }
-                ForEach(artists) { artist in
-                    Text(artist.name).tag(artist.name as String?)
+                .sheet(isPresented: $showingProfileEditor) {
+                    ProfileEditorView()
                 }
+            }
+            
+            Section(header: Text("Разное")) {
+                Button(action: {
+                    CoreDataManager.shared.importJson(filename: "artistsData003.json")
+                }) {
+                    Text("Загрузить образцы профилей артистов")
+                }
+                
+                Button(action: {
+                    CoreDataManager.shared.exportCoreData()
+                }) {
+                    Text("Экспорт JSON")
+                }
+                
+                Button(action: {
+                    CoreDataManager.shared.clearDatabase()
+                }) {
+                    Text("Удалить всех артистов")
+                }
+                
+                
             }
         }
     }

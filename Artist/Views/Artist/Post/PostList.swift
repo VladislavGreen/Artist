@@ -9,26 +9,27 @@ import SwiftUI
 
 struct PostList: View {
     
-    @AppStorage("defaultArtistName") var defaultArtistName: String?
+    // Posts - нам нужны posts сразу после старта приложения, чтобы отображать их в ArtistView.
+    // postsFetched - в то же время, нам нужно оперативно изменять что-то и отражать изменения
     
     @Environment(\.managedObjectContext) private var viewContext
-//    @FetchRequest(
-//        sortDescriptors: [SortDescriptor(\.name)],
-//        animation: .default)
-//    private var artists: FetchedResults<Artist>
+    @FetchRequest(
+        sortDescriptors: [SortDescriptor(\.dateCreatedTS)],
+        animation: .default)
+    private var postsFetched: FetchedResults<Post>
+    
+    var artist: Artist
+    @State var posts: [Post]
     
     @State private var showFlaggedOnly = false
     @State var isPreview = false
     @State var showingPosts = false
     @State var showingDetail = false
     
-    @State var posts: [Post]
-    
     var body: some View {
         
         NavigationView {
             List {
-
                 if !isPreview {
                     Toggle(isOn: $showFlaggedOnly) {
                         Text("Show flagged only")
@@ -47,6 +48,7 @@ struct PostList: View {
                             }
                         }
                         .navigationTitle("All news")
+                        
                     } else {
                         ForEach(posts) { post in
                             NavigationLink {
@@ -68,7 +70,7 @@ struct PostList: View {
                             showingPosts.toggle()
                         }
                         .sheet(isPresented: $showingPosts) {
-                            PostList(isPreview: false, posts: posts)
+                            PostList(artist: artist, posts: posts, isPreview: false)
                                 .environment(\.managedObjectContext, self.viewContext)
                         }
 
@@ -82,13 +84,13 @@ struct PostList: View {
                 }
             }
             .listStyle(.plain)
-        } 
-//        .onReceive(artists.publisher, perform: { _ in
-//            self.posts = posts
-//                .filter {
-//                    (post: Post) in (!showFlaggedOnly || post.isFlagged)
-//                }
-//        })
+        }
+//        НЕ ПОЛУЧАЕТ ПРЕДИКАТА ПРИ ЗАПУСКЕ ПРИЛОЖЕНИЯ
+       .onAppear {
+           print("🆔 onAppear Post артист: \(artist.name)")
+           postsFetched.nsPredicate = NSPredicate(format: "ofArtist == %@", artist)
+           posts = Array(postsFetched)
+       }
     }
 }
 
