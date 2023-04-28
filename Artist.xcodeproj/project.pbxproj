@@ -335,6 +335,7 @@
 		A4B6260029B76B7E00BCD739 = {
 			isa = PBXGroup;
 			children = (
+				A4E551D829FC0B7100CB383E /* Readme.md */,
 				A4B6260B29B76B7E00BCD739 /* Artist */,
 				A4B6260A29B76B7E00BCD739 /* Products */,
 			);
@@ -351,7 +352,6 @@
 		A4B6260B29B76B7E00BCD739 /* Artist */ = {
 			isa = PBXGroup;
 			children = (
-				A4E551D829FC0B7100CB383E /* Readme.md */,
 				A4B6261029B76B8000BCD739 /* Assets.xcassets */,
 				A4B6261229B76B8000BCD739 /* Preview Content */,
 				A4B6261C29B76D9F00BCD739 /* Fonts, Colors */,
