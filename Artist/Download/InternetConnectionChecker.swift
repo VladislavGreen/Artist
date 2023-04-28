@@ -12,8 +12,7 @@ import SystemConfiguration
 public class InternetConnectionChecker {
 
 
-    private init() {
-    }
+    private init() {}
 
     public static func isConnectedToNetwork() -> Bool {
 

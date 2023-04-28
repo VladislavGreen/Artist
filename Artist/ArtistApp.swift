@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct ArtistApp: App {
+
     
 //    @Environment(\.scenePhase) var scenePhase
     
@@ -17,6 +18,7 @@ struct ArtistApp: App {
             ContentView()
                 .environment(\.managedObjectContext, CoreDataManager.shared.context)
         }
+        // РАБОТАЕТ ОЧЕНЬ ПОДОЗРИТЕЛЬНО - МЕНЯЕТ АРТИСТА
 //        .onChange(of: scenePhase) { _ in
 //            CoreDataManager.shared.saveContext()
 //        }

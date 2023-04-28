@@ -10,7 +10,8 @@ import SwiftUI
 
 struct AudioPlayerPlayButton: View {
     
-    @EnvironmentObject var artist: Artist
+//    @EnvironmentObject
+//    var artist: Artist
     @ObservedObject private var audioManager = StreamManager.shared
     @Binding var isMaximased: Bool
     
@@ -29,9 +30,9 @@ struct AudioPlayerPlayButton: View {
                 return
             }
             
-            print("играем дефолтный плейлист")
-            let releases = Array(artist.releases! as Set<Release>)
-            audioManager.playTopPlaylist(releases: releases)
+//            print("играем дефолтный плейлист")
+//            let releases = Array(artist.releases! as Set<Release>)
+//            audioManager.playTopPlaylist(releases: releases)
             
         } label: {
             Image(systemName: audioManager.isPlaying ? "pause.circle" : "play.circle" )
@@ -60,8 +61,8 @@ struct AudioPlayerPlayButton: View {
     }
 }
 
-struct AudioPlayerPlayButton_Previews: PreviewProvider {
-    static var previews: some View {
-        AudioPlayerPlayButton(isMaximased: .constant(true))
-    }
-}
+//struct AudioPlayerPlayButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AudioPlayerPlayButton(isMaximased: .constant(true))
+//    }
+//}

@@ -69,6 +69,18 @@ public class Artist: NSManagedObject, Codable {
         
         try values.encode(releases, forKey: .releases)
         try values.encode(posts, forKey: .posts)
+        
+        let downloadManager = DownloadManager()
+        downloadManager.downloadAndSaveFile(
+            folderName: name,
+            fileName: mainImageName ?? "Image",
+            fileType: DownloadFileType.artistImage,
+            url: mainImageURL ?? "") { destinationURL, errorString in
+                print("🅰️ \(destinationURL)")
+                print(errorString)
+                let defaults = UserDefaults.standard
+                defaults.set(destinationURL, forKey: self.mainImageURL!)
+            }
     }
     
     private enum CodingKeys: CodingKey {
@@ -92,4 +104,9 @@ public class Artist: NSManagedObject, Codable {
             releases,
             posts
     }
+    
+//    private func loadImageToFileSystem() {
+//        let downloadManager = DownloadManager()
+//
+//    }
 }

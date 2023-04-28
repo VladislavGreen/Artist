@@ -14,22 +14,49 @@ struct ReleaseItem: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            Image(release.imageCoverName ?? "No name")
-                .renderingMode(.original)
-                .resizable()
-                .frame(width: 104, height: 104)
-                .cornerRadius(4)
-            VStack {
-                Text(release.name)
-                #if DEBUG
-                Text(release.dateReleasedTS.formatted(date: .abbreviated, time: .omitted))
-                #endif
+            
+            if let imageURL = release.imageCoverURL {
+                let downloadManager = DownloadManager()
+                if downloadManager.getImageFromDefaults(imageURLString: imageURL) == nil {
+                    AsyncImage(url: URL(string: imageURL)) { phase in
+                        switch phase {
+                        case .failure:
+                            Image(systemName: "photo")
+                                .font(.largeTitle)
+                        case .success(let image):
+                            image .resizable()
+                        default:
+                            ProgressView()
+                        }
+                    }
+//                    .renderingMode(.original)
+//                    .resizable()
+                    .frame(width: 104, height: 104)
+                    .cornerRadius(4)
+                } else {
+                    downloadManager.getImageFromDefaults(imageURLString: imageURL)!
+                        .renderingMode(.original)
+                        .resizable()
+                        .frame(width: 104, height: 104)
+//                        .cornerRadius(4)
+                        .cornerRadius(24) // ❗️для того, чтобы видеть отличия
+                }
+
+                VStack {
+                    Text(release.name)
+#if DEBUG
+                    Text(release.dateReleasedTS.formatted(date: .abbreviated, time: .omitted))
+#endif
+                }
+                .foregroundColor(.textPrimary)
+                .font(.caption)
+            } else {
+                Text("Пока нет релизов")
             }
-            .foregroundColor(.textPrimary)
-            .font(.caption)
         }
         .padding(.leading, 16)
         .padding(.bottom, 16)
+            
     }
 }
 

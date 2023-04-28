@@ -25,6 +25,7 @@
 		A415B98829E2EBDE00892364 /* Artist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A415B98629E2EBDE00892364 /* Artist.xcdatamodeld */; };
 		A42000EE29F18435004BF854 /* artistsData003.json in Resources */ = {isa = PBXBuildFile; fileRef = A42000ED29F18435004BF854 /* artistsData003.json */; };
 		A4250E7E29DF3B0C002927A8 /* TrackDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4250E7D29DF3B0C002927A8 /* TrackDownloader.swift */; };
+		A46CC4B229FA5DBF00304C9A /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CC4B129FA5DBF00304C9A /* DownloadManager.swift */; };
 		A49490A029F5563E003B59BA /* StatsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494909F29F5563E003B59BA /* StatsModels.swift */; };
 		A49490A229F57011003B59BA /* artistsData001.json in Resources */ = {isa = PBXBuildFile; fileRef = A49490A129F57011003B59BA /* artistsData001.json */; };
 		A49490A629F66153003B59BA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49490A529F66153003B59BA /* LoginView.swift */; };
@@ -93,6 +94,7 @@
 		A415B98729E2EBDE00892364 /* Artist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Artist.xcdatamodel; sourceTree = "<group>"; };
 		A42000ED29F18435004BF854 /* artistsData003.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artistsData003.json; sourceTree = "<group>"; };
 		A4250E7D29DF3B0C002927A8 /* TrackDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDownloader.swift; sourceTree = "<group>"; };
+		A46CC4B129FA5DBF00304C9A /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		A494909F29F5563E003B59BA /* StatsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModels.swift; sourceTree = "<group>"; };
 		A49490A129F57011003B59BA /* artistsData001.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artistsData001.json; sourceTree = "<group>"; };
 		A49490A529F66153003B59BA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -245,12 +247,20 @@
 		A44F599329DED88B00E2D3F0 /* PlayerManager */ = {
 			isa = PBXGroup;
 			children = (
-				A406919829DC57EA00419916 /* InternetConnectionChecker.swift */,
-				A4250E7D29DF3B0C002927A8 /* TrackDownloader.swift */,
 				A406919629DC3BB900419916 /* StreamManager.swift */,
 				A4075E0729CC4BA0007D3B5F /* AudioManager.swift */,
 			);
 			path = PlayerManager;
+			sourceTree = "<group>";
+		};
+		A46CC4B329FA95D000304C9A /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				A406919829DC57EA00419916 /* InternetConnectionChecker.swift */,
+				A4250E7D29DF3B0C002927A8 /* TrackDownloader.swift */,
+				A46CC4B129FA5DBF00304C9A /* DownloadManager.swift */,
+			);
+			path = Download;
 			sourceTree = "<group>";
 		};
 		A494909E29F5554C003B59BA /* Stats */ = {
@@ -339,6 +349,7 @@
 				A4075E0629CC4B72007D3B5F /* AudioPlayer */,
 				A434043E29C0890700E91CB4 /* Resources */,
 				A415733629C1FE8D00E51DE0 /* Models */,
+				A46CC4B329FA95D000304C9A /* Download */,
 				A415B98929E2EBE600892364 /* CoreData */,
 			);
 			path = Artist;
@@ -556,6 +567,7 @@
 				A49490A029F5563E003B59BA /* StatsModels.swift in Sources */,
 				A4C15A5A29CB4AC700914568 /* AudioPlayerView.swift in Sources */,
 				A4C15A5829CB138300914568 /* ProfileEditor.swift in Sources */,
+				A46CC4B229FA5DBF00304C9A /* DownloadManager.swift in Sources */,
 				A4B6263829BB32AB00BCD739 /* EditView.swift in Sources */,
 				A4C15A5429CAD90D00914568 /* ProfileSummary.swift in Sources */,
 				A415733529C1FDB400E51DE0 /* ArtistModelData.swift in Sources */,

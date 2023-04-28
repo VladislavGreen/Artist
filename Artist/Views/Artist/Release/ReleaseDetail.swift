@@ -23,9 +23,28 @@ struct ReleaseDetail: View {
             }
             ZStack {
                 HStack {
-                    Image(release.imageCoverName ?? "person")
-                        .resizable()
-                        .cornerRadius(0)
+                    if let imageURL = release.imageCoverURL {
+                        let downloadManager = DownloadManager()
+                        if downloadManager.getImageFromDefaults(imageURLString: imageURL) == nil {
+                            AsyncImage(url: URL(string: imageURL)) { phase in
+                                switch phase {
+                                case .failure:
+                                    Image(systemName: "photo")
+                                        .font(.largeTitle)
+                                case .success(let image):
+                                    image .resizable()
+                                default:
+                                    ProgressView()
+                                }
+                            }
+                            .cornerRadius(0)
+                        } else {
+                            downloadManager.getImageFromDefaults(imageURLString: imageURL)!
+                                .resizable()
+                            //                                .cornerRadius(0)
+                                .cornerRadius(24) // ❗️для того, чтобы видеть отличия
+                        }
+                    }
                 }
                 
                 Button(action: {
@@ -105,7 +124,7 @@ struct ReleaseDetail: View {
         }
     }
     
-    // 🛑 НЕ РАБОТАЕТ НА ВСЕХ VIEW ГДЕ ВСТРЕЧАЮТСЯ ОДИНАКОВЫЕ ТРЕКИ:
+    
     private func trackPlayButtonLabel(track: Track) -> String {
         if audioManager.currentTrack?.id == track.id,
            audioManager.isPlaying {

@@ -11,8 +11,6 @@ import CoreData
 
 struct ArtistView: View {
     
-//    var artist: Artist
-    
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\.name, order: .reverse)],
@@ -60,7 +58,7 @@ struct ArtistView: View {
             .padding(8)
             
             VStack {
-                AvatarImageView(imageName: artists.first?.mainImageName ?? "Ono")
+                AvatarImageView(mainImageURL: artists.first?.mainImageURL ?? "")
                     .ignoresSafeArea(edges: .horizontal)
                     .blur(radius: scrollOffset/90)
                     .opacity(90 / scrollOffset)
@@ -71,19 +69,19 @@ struct ArtistView: View {
 
                 VStack {
                     ZStack {
-                        AvatarImageView(imageName: artists.first?.mainImageName ?? "Ono")
+                        AvatarImageView(mainImageURL: artists.first?.mainImageURL ?? "")
                             .ignoresSafeArea(edges: .horizontal)
                             .opacity(0)
                         
-                        // Невидимая кнопка Play
+                        // Невидимая кнопка Play?
                         Button(action: {
-                            guard !audioManager.isPlaying else {
-                                audioManager.pause()
-                                return
-                            }
-                            if let releases = artists.first?.releases {
-                                audioManager.playTopPlaylist(releases: Array(releases))
-                            }
+//                            guard !audioManager.isPlaying else {
+//                                audioManager.pause()
+//                                return
+//                            }
+//                            if let releases = artists.first?.releases {
+//                                audioManager.playTopPlaylist(releases: Array(releases))
+//                            }
                         }) {
                             Image(systemName: "play.circle")
                                 .resizable()

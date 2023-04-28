@@ -67,7 +67,8 @@ struct ArtistEditorView: View {
                                             ProgressView()
                                     }
                                 }
-                                .frame(width: 64, height: 64) .clipShape(RoundedRectangle(cornerRadius: 4))
+                                .frame(width: 64, height: 64)
+                                .clipShape(RoundedRectangle(cornerRadius: 4))
                             } else {
                                 Image(systemName: "photo")
                                     .font(.largeTitle)

@@ -29,7 +29,7 @@ public class TrackDownloader {
         }
     }
     
-    
+    // более общий вариант - в DownloadManager
     private func downloadAndSaveAudioFile(_ audioFile: String, completion: @escaping (String) -> Void) {
         
         self.isDownloading.toggle()

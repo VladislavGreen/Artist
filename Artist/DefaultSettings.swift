@@ -11,7 +11,7 @@
 //}
 
 /*
- Может быть лучше определять дефолтного артиста по UUID. Вообще, там, похоже, сложности с соответствием RawRepresentable, но есть вот такое решение:
+ Может быть, лучше определять дефолтного артиста по UUID. Вообще, там, похоже, сложности с соответствием RawRepresentable, но есть вот такое решение:
  
  We can confirm UUID to RawRepresentable protocol so it fits to one of AppStorage init.
 

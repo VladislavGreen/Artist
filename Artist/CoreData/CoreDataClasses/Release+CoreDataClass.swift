@@ -34,6 +34,18 @@ public class Release: NSManagedObject, Codable {
         tracks = try values.decode(Set<Track>.self, forKey: .tracks)
         
 //        ofArtist = try values.decode(Artist.self, forKey: .ofArtist)
+        
+        let downloadManager = DownloadManager()
+        downloadManager.downloadAndSaveFile(
+            folderName: name,
+            fileName: name,
+            fileType: DownloadFileType.releaseImage,
+            url: imageCoverURL ?? "") { destinationURL, errorString in
+                print("🅰️ \(destinationURL)")
+                print(errorString)
+                let defaults = UserDefaults.standard
+                defaults.set(destinationURL, forKey: self.imageCoverURL!)
+            }
     }
     
     // Confirming Encoding
