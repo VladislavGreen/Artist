@@ -7,16 +7,8 @@
 
 import SwiftUI
 
+
 struct ReleaseRow: View {
-    
-//    var artist: Artist
-    
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @FetchRequest(
-//        sortDescriptors: [SortDescriptor(\.dateReleasedTS, order: .reverse)],
-////        predicate: NSPredicate(format: "ofArtist = %@", artist),
-//        animation: .default)
-//    private var releases: FetchedResults<Release>
     
     var releases: [Release]
     
@@ -27,7 +19,7 @@ struct ReleaseRow: View {
         
         VStack(alignment: .leading) {
                 
-            FieldSeparator(title: "Discography")
+            FieldSeparator(title: "Discography".localized)
             .onTapGesture {
                 showingReleases.toggle()
             }
@@ -50,11 +42,6 @@ struct ReleaseRow: View {
                 ReleaseDetail(release: release)
             }
         }
-//         НЕ ПОЛУЧАЕТ ПРЕДИКАТА ПРИ ЗАПУСКЕ ПРИЛОЖЕНИЯ
-//        .onAppear {
-//            print("🆔 onAppear Release артист: \(artist.name)")
-//            releases.nsPredicate = NSPredicate(format: "ofArtist == %@", artist)
-//        }
     }
 }
 

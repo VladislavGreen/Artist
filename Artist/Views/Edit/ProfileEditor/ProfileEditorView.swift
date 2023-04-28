@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileEditorView: View {
     var body: some View {
-        Text("ProfileEditorView")
+        Text("ProfileEditorView: здесь будут данные пользователей, представляющеих и администрирующих артиста")
     }
 }
 

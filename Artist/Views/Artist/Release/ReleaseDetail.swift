@@ -37,12 +37,11 @@ struct ReleaseDetail: View {
                                     ProgressView()
                                 }
                             }
-                            .cornerRadius(0)
+                            .cornerRadius(12)
                         } else {
                             downloadManager.getImageFromDefaults(imageURLString: imageURL)!
                                 .resizable()
-                            //                                .cornerRadius(0)
-                                .cornerRadius(24) // ❗️для того, чтобы видеть отличия
+                                .cornerRadius(0)
                         }
                     }
                 }

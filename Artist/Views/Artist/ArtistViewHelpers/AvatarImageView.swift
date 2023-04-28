@@ -30,13 +30,13 @@ struct AvatarImageView: View {
                 .clipShape(Rectangle())
                 .scaledToFit()
                 .shadow(radius: 4)
+                .cornerRadius(12)
         } else {
             downloadManager.getImageFromDefaults(imageURLString: mainImageURL)!
                 .resizable()
                 .clipShape(Rectangle())
                 .scaledToFit()
                 .shadow(radius: 4)
-                .cornerRadius(24) // ❗️для того, чтобы видеть отличия
         }
     }
 }

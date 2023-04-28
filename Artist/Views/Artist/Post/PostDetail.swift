@@ -19,7 +19,7 @@ struct PostDetail: View {
         ScrollView {
             
             HStack {
-                Text(post.title ?? "No title")
+                Text(post.title ?? "No title".localized)
                     .font(CustomFont.subheading
                 )
                 
@@ -47,11 +47,11 @@ struct PostDetail: View {
             
             Text(post.text)
                 .padding(.bottom, 12)
-            Text("Discussion section")
+            Text("Discussion section".localized)
                 
         }
         .padding(16)
-        .navigationTitle(post.title ?? "No title")
+        .navigationTitle(post.title ?? "No title".localized)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             flag = post.isFlagged

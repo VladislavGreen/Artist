@@ -32,7 +32,7 @@ struct PostList: View {
             List {
                 if !isPreview {
                     Toggle(isOn: $showFlaggedOnly) {
-                        Text("Show flagged only")
+                        Text("Show flagged only".localized)
                     }
                     
                     if showFlaggedOnly {
@@ -47,7 +47,7 @@ struct PostList: View {
                                 }
                             }
                         }
-                        .navigationTitle("All news")
+                        .navigationTitle("All news".localized)
                         
                     } else {
                         ForEach(posts) { post in
@@ -59,13 +59,13 @@ struct PostList: View {
                                     .environment(\.managedObjectContext, self.viewContext)
                             }
                         }
-                        .navigationTitle("All news")
+                        .navigationTitle("All news".localized)
                     }
                 }
 
                 if isPreview {
 
-                    FieldSeparator(title: "Recent News")
+                    FieldSeparator(title: "Recent News".localized)
                         .onTapGesture {
                             showingPosts.toggle()
                         }

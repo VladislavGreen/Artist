@@ -11,25 +11,91 @@
 "OK" = "Ладно";
 "Cancel" = "Отмена";
 "Fix" = "Исправить";
-"Welcome to the Artist App!" = "Добро пожаловать в Artist App";
 "Next" = "Дальше";
-
-
-// WelcomeView
-
-"The simple and convient app will let you spread your music all over the world!" = "Простое и удобное приложение позволит вам распространять музыку по всему миру!";
-
-"- keep and manage your tracks in one place" = "- все ваши треки легко управляются из одного приложения";
-
-"- let people know what are you currently working on" = "- покажите фанатам над чем вы работаете";
-
-"- share your music directly or using Artist Hub" = "- делитесь музыкой напрямую или используя Artist Hub";
-
-"Not registered yet? Press the Next button to join!" = "Ещё не зарегистрировались? Нажмите кнопку, чтобы присоединиться! ";
-
+"Email" = "Эл. почта";
+"Password" = "Пароль";
+"No title" = "Без названия";
+"Log In" = "Войти";
+"Sign Up" = "Регистрация";
+"see all" = "все";
+"Alert" = "Алерт";
 
 
 //  LoginView
 
-"Log In" = "Войти";
+
 "Face ID" = "Face ID";
+"Welcome to the Artist App!" = "Добро пожаловать в Artist App";
+"Haven't registered yet?" = "Ещё не зарегистрировались?";
+"Please Login" = "Войдите в профиль";
+"Email" = "Эл. почта";
+"Password" = "Пароль";
+"Entered email or password isn't correct. Try again" = "Адрес эл.почты или пароль неверны. Попробуйте повторить?";
+"Enter your email and password and press Log In" = "Введите адрес эл.почты и пароль и нажмите 'Войти'";
+"Success!" = "Успех!";
+
+
+// SignUpView
+
+"Enter your Email and a password with confirmation. The password should be longer then two digits" = "Введите Вашу эл.почту и пароль с подтверждением";
+"Entered email address doesn't look correct" = "Эл.почта или пароль не выглядят правильными";
+"Entered password is too short. There must be more than 2 symbols" = "Пароль слишком короткий. Должно быть больше двух символов";
+"Password confirmation" = "Подтверждение пароля";
+"Create account" = "Создать аккаунт";
+"Password and password confitmation don't match. Please retry" = "Пароль и подтверждение пароля не совпадают. Пожалуйста, повторите";
+
+
+// ReleaseRow
+"Discography" = "Дискография";
+
+// ReleaseHome
+"Featured" = "Рекомендуем";
+
+// ReleaseItem
+"No releases yet" = "Пока нет релизов";
+
+// ReleaseDetail
+"Go to artist" = "К артисту";
+"Add to playlist" = "Добавить в плейлист"; 
+
+// PostList
+"Show flagged only" = "Показать только с флажками";
+"All news" = "Все новости";
+"Recent News" = "Последние новости";
+
+// PostDetail
+"Discussion section" = "Комментарии";
+
+// ContentView
+"Let's create an artist?" = "Создадим Артиста?";
+
+//EditView
+"Choose an artist:" = "Выберите артиста:";
+"Choose:" = "Выбрать:";
+"Nothing loaded" = "Ничего не загружено";
+"Edit" = "Редактировать ";
+"Add new artist" = "Добавить нового артиста";
+"My data" = "Мои данные";
+"Change" = "Изменить";
+"Other" = "Разное";
+"Load default artists" = "Загрузить образцы профилей артистов";
+"Export JSON" = "Экспорт JSON";
+"Quit" = "Выйти";
+"Remove all artists" = "Удалить всех артистов";
+
+// ArtistEditorView
+"Required fields" = "Обязательные поля:";
+"Enter Artist name" = "Введите имя артиста";
+"Enter Artist image URL" = "Ссылка на картинку";
+"Convert gDisk link" = "Конвертировать gDisk ссылку";
+"Paste gDisk link" = "Вставте gDisk ссылку";
+"Add" = "Добавить";
+"Add Artist" = "Добавить артиста";
+"Confirm changes" = "Подтвердить изменения";
+"Artist needs a name" = "Имя артисту нужно обязательно";
+"DELETE current artist" = "Удалить выбранного артиста";
+"Are you sure" = "Вы уверены?";
+"Delete" = "Delete";
+
+// ArtistView
+"No artists to show" = "Нет артистов для отображения";

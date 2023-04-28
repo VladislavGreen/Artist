@@ -8,20 +8,32 @@
 import SwiftUI
 
 struct LoginButton: View {
-    
     var pressed: () -> Void
-    
     var body: some View {
-        
         Button(action: pressed) {
             HStack {
-                Text("LogIn")
+                Text("Log In".localized)
             }
             .foregroundColor(.accentColor)
             .background(.clear)
         }
     }
 }
+
+struct SignUpButton: View {
+    var pressed: () -> Void
+    var body: some View {
+        Button(action: pressed) {
+            HStack {
+                Text("Sign Up".localized)
+            }
+            .foregroundColor(.accentColor)
+            .background(.clear)
+        }
+    }
+}
+
+
 
 //struct ProfileButton_Previews: PreviewProvider {
 //    static var handler: () -> Void = {  }

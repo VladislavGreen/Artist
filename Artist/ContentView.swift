@@ -13,6 +13,7 @@ import CoreData
 struct ContentView: View {
     
     @AppStorage("isFirstLaunch") var isFirstLaunch = true
+    @AppStorage("isLoggedIn") private var isLoggedIn = false
     @AppStorage("defaultArtistName") var defaultArtistName: String?
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -32,20 +33,22 @@ struct ContentView: View {
                     .tabItem {
                         Label("Profile", systemImage: "person.fill.checkmark")
                     }
-                StatsView()
-                    .environment(\.managedObjectContext, self.viewContext)
-                    .tabItem {
-                        Label("Stats", systemImage: "person")
-                    }
-                EditView()
-                    .environment(\.managedObjectContext, self.viewContext)
-                    .tabItem {
-                        Label("Edit", systemImage: "person.fill.checkmark")
+                if isLoggedIn {
+                    StatsView()
+                        .environment(\.managedObjectContext, self.viewContext)
+                        .tabItem {
+                            Label("Stats", systemImage: "waveform.path.ecg")
+                        }
+                    EditView()
+                        .environment(\.managedObjectContext, self.viewContext)
+                        .tabItem {
+                            Label("Edit", systemImage: "square.and.pencil")
+                        }
                     }
                 }
             } else {
                 VStack{
-                    Text("Создадим Артиста?")
+                    Text("Let's create an artist?".localized)
                     ArtistEditorView(isNewArtist: .constant(true))
                 }
             }
@@ -54,18 +57,7 @@ struct ContentView: View {
             refreshData() {
                 getDefaultArtist()
             }
-//            print("🆔 onAppear ContentView: Дефолтный артист: \(defaultArtistName)")
-//            artists.nsPredicate = defaultArtistName?.isEmpty ?? true
-//            ? nil
-//            : NSPredicate(format: "name == %@", defaultArtistName!)
         }
-//        .onChange(of: defaultArtistName ?? "") { value in
-//            print("🆔 onChange ContentView: Дефолтный артист: \(defaultArtistName)")
-//            artists.nsPredicate = defaultArtistName?.isEmpty ?? true
-//            ? nil
-//            : NSPredicate(format: "name == %@", value)
-//        }
-
     }
     
     
@@ -85,7 +77,7 @@ struct ContentView: View {
         if artists.count  != 0 {
             for artist in artists {
                     defaultArtistName = artist.name
-                    print("getDefaultArtist: по умолчанию: \(defaultArtistName)")
+//                    print("getDefaultArtist: по умолчанию: \(defaultArtistName)")
                     break
             }
         } else {

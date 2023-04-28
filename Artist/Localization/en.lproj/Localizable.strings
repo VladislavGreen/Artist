@@ -11,27 +11,88 @@
 "OK" = "OK";
 "Cancel" = "Cancel";
 "Fix" = "Fix";
-"Welcome to the Artist App!" = "Welcome to the Artist App!";
 "Next" = "Next";
-
-
-// WelcomeView
-
-"The simple and convient app will let you spread your music all over the world!" = "The simple and convient app will let you spread your music all over the world!";
-
-"- keep and manage your tracks in one place" = "- keep and manage your tracks in one place";
-
-"- let people know what are you currently working on" = "- let people know what are you currently working on";
-
-"- share your music directly or using Artist Hub" = "- share your music directly or using Artist Hub";
-
-"Not registered yet? Press the Next button to join us!" = "Not registered yet? Press the Next button to join us!";
-
+"No title" = "No title";
+"Log In" = "Log In";
+"Sign Up" = "Sign Up";
+"see all" = "see all";
 
 
 //  LoginView
 
-"Log In" = "Log In";
 "Face ID" = "Face ID";
+"Welcome to the Artist App!" = "Welcome to the Artist App!";
+"Haven't registered yet?" = "Haven't registered yet?";
+"Please Login" = "Please Login";
+"Email" = "Email";
+"Password" = "Password";
+"Entered email or password isn't correct. Try again" = "Entered email or password isn't correct. Try again";
+"Enter your email and password and press Log In" = "Enter your email and password and press Log In";
+"Success!" = "Success!";
 
 
+// SignUpView
+
+"Enter your Email and a password with confirmation. The password should be longer then two digits" = "Enter your Email and a password with confirmation. The password should be longer then two digits";
+"Entered email address doesn't look correct" = "Entered email address doesn't look correct";
+"Entered password is too short. There must be more than 2 symbols" = "Entered password is too short. There must be more than 2 symbols";
+"Password confirmation" = "Password confirmation";
+"Create account" = "Create account";
+"Password and password confitmation don't match. Please retry" = "Password and password confitmation don't match. Please retry";
+
+
+// ReleaseRow
+
+"Discography" = "Discography";
+
+// ReleaseHome
+"Featured" = "Featured";
+
+// ReleaseItem
+"No releases yet" = "No releases yet";
+
+// ReleaseDetail
+"Go to artist" = "Go to artist";
+"Add to playlist" = "Add to playlist";
+
+// PostList
+"Show flagged only" = "Show flagged only";
+"All news" = "All news";
+"Recent News" = "Recent News";
+
+// PostDetail
+"Discussion section" = "Discussion section";
+
+// ContentView
+"Let's create an artist?" = "Let's create an artist?";
+
+// EditView
+"Choose an artist:" = "Choose an artist:";
+"Choose:" = "Choose:";
+"Nothing loaded" = "Nothing loaded";
+"Edit" = "Edit ";
+"Add new artist" = "Add new artist";
+"My data" = "My data";
+"Change" = "Change";
+"Other" = "Other";
+"Load default artists" = "Load default artists";
+"Export JSON" = "Export JSON";
+"Quit" = "Quit";
+"Remove all artists" = "Remove all artists";
+
+// ArtistEditorView
+"Required fields" = "Required fields";
+"Enter Artist name" = "Enter Artist name";
+"Enter Artist image URL" = "Enter Artist image URL";
+"Convert gDisk link" = "Convert gDisk link";
+"Paste gDisk link" = "Paste gDisk link";
+"Add" = "Add";
+"Add Artist" = "Add Artist";
+"Confirm changes" = "Confirm changes";
+"Artist needs a name" = "Имя артисту нужно обязательно";
+"DELETE current artist" = "DELETE current artist";
+"Are you sure" = "Are you sure";
+"Delete" = "Удалить";
+
+// ArtistView
+"No artists to show" = "No artists to show";

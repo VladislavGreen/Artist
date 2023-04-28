@@ -20,7 +20,7 @@ struct FieldSeparator: View {
                 .padding(.leading, 16)
                 .font(CustomFont.heading)
             Spacer()
-            Text("see all")
+            Text("see all".localized)
                 .padding(.trailing, 16)
                 .foregroundColor(.accentColor)
         }

@@ -10,14 +10,14 @@ import SwiftUI
 
 struct ReleaseHome: View {
     
-//    var artist: Artist
     var releases: [Release]
     
     var body: some View {
         NavigationView {
             List {
                 ZStack{
-                    let featuredReleases = releases.filter { $0.isFeatured }
+                    var featuredReleases = releases.filter { $0.isFeatured }
+                    
                     Image(featuredReleases[0].imageCoverName ?? "Ono")
                         .resizable()
                         .scaledToFill()
@@ -28,7 +28,7 @@ struct ReleaseHome: View {
                     VStack {
                         Spacer()
                         HStack {
-                            Text("Featured")
+                            Text("Featured".localized)
                                 .font(CustomFont.heading)
                                 .colorInvert()
                                 .padding(.leading, 16)
@@ -61,20 +61,9 @@ struct ReleaseHome: View {
                     }
                     .frame(height: 140)
                 }
-                
-                
-                
-//                ForEach(releaseTypes.keys.sorted(), id: \.self) { key in
-//                    ReleaseRow(
-//                        artist: artist,
-//                        releaseType: key,
-//                        releasesTypeSorted: releaseTypes[key]!,
-//                        isSortedByType: true)
-//                }
-//                .listRowInsets(EdgeInsets())
             }
             .listStyle(.inset)
-            .navigationTitle("Discography")
+            .navigationTitle("Discography".localized)
         }
     }
     

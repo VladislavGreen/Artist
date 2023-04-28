@@ -44,10 +44,10 @@ struct ArtistEditorView: View {
     var body: some View {
         
         Form {
-            Section(header: Text("Обязательные поля:")) {
+            Section(header: Text("Required fields".localized)) {
                 
                 VStack {
-                    TextField("Enter Artist name", text: $name)                  // Reqired
+                    TextField("Enter Artist name".localized, text: $name)                  // Reqired
                         .disableAutocorrection(true)
                         .frame(alignment: .leading)
                         .font(CustomFont.subheading)
@@ -96,26 +96,26 @@ struct ArtistEditorView: View {
                     }
                     .frame(height: 64)
                     
-                    TextField("Enter Artist image URL", text: $mainImageURL)
+                    TextField("Enter Artist image URL".localized, text: $mainImageURL)
                         .disableAutocorrection(true)
                 }
             }
             
-            Section(header: Text("Для gDisk ссылок на картинки")) {
+            Section(header: Text("Convert gDisk link".localized)) {
                 VStack {
-                    TextField("Вставте gDisk ссылку", text: $gDiskLink)
+                    TextField("Paste gDisk link".localized, text: $gDiskLink)
                         .disableAutocorrection(true)
                     Button(action: {
                         formatGoogleDiscLinkToURL(gdiskLink: gDiskLink)
                         
                     }) {
-                        Text("Добавить")
+                        Text("Add".localized)
                     }
                 }
             }
             
             Section {
-                Button (isNewArtist ? "Add Artist" : "Confirm changes") {
+                Button (isNewArtist ? "Add Artist".localized : "Confirm changes".localized) {
                     isNameEmptyCheck(name: name)
                     
                     if !isEmptyNameAlert {
@@ -135,15 +135,14 @@ struct ArtistEditorView: View {
                         CoreDataManager.shared.saveData()
                         
                         defaultArtistName = self.name
-                        print("NEW NAME \(defaultArtistName)")
                     }
                     
                     self.presentationMode.wrappedValue.dismiss()
                 }
                 .alert(isPresented: $isEmptyNameAlert) {
                    Alert(
-                        title: Text("Alert"),
-                        message: Text("Имя артисту нужно обязательно"),
+                    title: Text("Alert".localized),
+                        message: Text("Artist needs a name".localized),
                         dismissButton: .destructive(Text("ok")) {
                             isEmptyNameAlert = false
                                 self.name = isNewArtist ? "" : artists.first?.name ?? ""
@@ -158,20 +157,19 @@ struct ArtistEditorView: View {
                 Button {
                     isDeleteAlert = true
                 } label: {
-                    Text("DELETE current artist)")
+                    Text("DELETE current artist)".localized)
                 }
                 .disabled(artists.count == 0)
             }
             .alert(isPresented: $isDeleteAlert) {
                 Alert(
-                    title: Text("Alert"),
-                    message: Text("Вы уверены?"),
-                    primaryButton: .destructive(Text("Delete")) {
+                    title: Text("Alert".localized),
+                    message: Text("Are you sure".localized),
+                    primaryButton: .destructive(Text("Delete".localized)) {
                         CoreDataManager.shared.deleteArtist(artists.first!) {
                             if artists.count  != 0 {
                                 for artist in artists {
                                         defaultArtistName = artist.name
-                                        print("getDefaultArtist: по умолчанию: \(defaultArtistName)")
                                         break
                                 }
                             } else {
@@ -202,7 +200,6 @@ struct ArtistEditorView: View {
             }
         }
         .onChange(of: defaultArtistName ?? "") { value in
-            print("🆔 onChangeArtistEdit: Дефолтный артист: \(defaultArtistName)")
             artists.nsPredicate = defaultArtistName?.isEmpty ?? true
             ? nil
             : NSPredicate(format: "name == %@", value)

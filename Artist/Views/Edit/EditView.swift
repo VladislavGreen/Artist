@@ -11,6 +11,7 @@ import KeychainAccess
 struct EditView: View {
     
     @AppStorage("defaultArtistName") var defaultArtistName: String?
+    @AppStorage("isLoggedIn") private var isLoggedIn = false
     
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
@@ -27,11 +28,11 @@ struct EditView: View {
         
         Form {
             
-            Section(header: Text("Выберите артиста:")) {
+            Section(header: Text("Choose an artist:".localized)) {
                 
-                Picker(selection: $defaultArtistName, label: Text("Выбрать:")) {
+                Picker(selection: $defaultArtistName, label: Text("Choose:".localized)) {
                     if artists.count == 0 {
-                        Text("Ничего не загружено").tag(nil as String?)
+                        Text("Nothing loaded".localized).tag(nil as String?)
                     }
                     ForEach(artists) { artist in
                         Text(artist.name).tag(artist.name as String?)
@@ -49,7 +50,7 @@ struct EditView: View {
                     showingArtistEditor.toggle()
                     isNewArtist = false
                 }) {
-                    Text("Редактировать " + (defaultArtistName ?? ""))
+                    Text("Edit ".localized + (defaultArtistName ?? ""))
                 }
                 .sheet(isPresented: $showingArtistEditor) {
                     ArtistEditorView(isNewArtist: $isNewArtist)
@@ -60,7 +61,7 @@ struct EditView: View {
                     showingArtistEditor.toggle()
                     isNewArtist = true
                 }) {
-                    Text("Добавить нового артиста")
+                    Text("Add new artist".localized)
                 }
                 .sheet(isPresented: $showingArtistEditor) {
                     ArtistEditorView(isNewArtist: $isNewArtist)
@@ -68,37 +69,42 @@ struct EditView: View {
                 }
             }
             
-            Section(header: Text("Мои данные")) {
+            Section(header: Text("My data".localized)) {
                 Button(action: {
                     showingProfileEditor.toggle()
                 }) {
-                    Text("Изменить")
+                    Text("Change".localized)
                 }
                 .sheet(isPresented: $showingProfileEditor) {
                     ProfileEditorView()
                 }
             }
             
-            Section(header: Text("Разное")) {
+            Section(header: Text("Other".localized)) {
                 Button(action: {
                     CoreDataManager.shared.importJson(filename: "artistsData003.json")
                 }) {
-                    Text("Загрузить образцы профилей артистов")
+                    Text("Load default artists".localized)
                 }
                 
                 Button(action: {
                     CoreDataManager.shared.exportCoreData()
                 }) {
-                    Text("Экспорт JSON")
+                    Text("Export JSON".localized)
                 }
                 
                 Button(action: {
+                    isLoggedIn = false
+                }) {
+                    Text("Quit".localized)
+                }
+            #if DEBUG
+                Button(action: {
                     CoreDataManager.shared.clearDatabase()
                 }) {
-                    Text("Удалить всех артистов")
+                    Text("Remove all artists".localized)
                 }
-                
-                
+            #endif
             }
         }
     }

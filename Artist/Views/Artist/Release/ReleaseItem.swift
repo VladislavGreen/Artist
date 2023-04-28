@@ -29,21 +29,20 @@ struct ReleaseItem: View {
                             ProgressView()
                         }
                     }
-//                    .renderingMode(.original)
-//                    .resizable()
                     .frame(width: 104, height: 104)
-                    .cornerRadius(4)
+                    .cornerRadius(12)
                 } else {
                     downloadManager.getImageFromDefaults(imageURLString: imageURL)!
                         .renderingMode(.original)
                         .resizable()
                         .frame(width: 104, height: 104)
-//                        .cornerRadius(4)
-                        .cornerRadius(24) // ❗️для того, чтобы видеть отличия
+                        .cornerRadius(4)
                 }
 
                 VStack {
                     Text(release.name)
+                        .frame(width: 104)
+                        .lineLimit(1)
 #if DEBUG
                     Text(release.dateReleasedTS.formatted(date: .abbreviated, time: .omitted))
 #endif
@@ -51,7 +50,7 @@ struct ReleaseItem: View {
                 .foregroundColor(.textPrimary)
                 .font(.caption)
             } else {
-                Text("Пока нет релизов")
+                Text("No releases yet".localized)
             }
         }
         .padding(.leading, 16)
