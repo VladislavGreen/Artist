@@ -14,12 +14,11 @@ struct AudioPlayerView: View {
     
     @ObservedObject private var audioManager = StreamManager.shared
     @State var size: CGSize = .zero
-    @State var isMaximazed = true
-    
+    @State var isMaximized = true
     
     var body: some View {
         
-        if isMaximazed {
+        if isMaximized {
             VStack {
                 
                 HStack(alignment: .center, spacing: 0) {
@@ -59,7 +58,7 @@ struct AudioPlayerView: View {
                             .imageScale(.medium)
                     }
                     
-                    AudioPlayerPlayButton(isMaximased: $isMaximazed)
+                    AudioPlayerPlayButton(isMaximized: $isMaximized)
                         .padding(.horizontal, 8)
                     
                     Button(action: {
@@ -73,7 +72,7 @@ struct AudioPlayerView: View {
                     
                     
                     Button(action: {
-                        isMaximazed.toggle()
+                        isMaximized.toggle()
                     }) {
                         Image(systemName: "arrow.triangle.merge")
                             .font(.title)
@@ -122,7 +121,7 @@ struct AudioPlayerView: View {
                 Spacer ()
                 HStack {
                     Spacer()
-                    AudioPlayerPlayButton(isMaximased: $isMaximazed)
+                    AudioPlayerPlayButton(isMaximized: $isMaximized)
                         .padding(.trailing, 8)
                 }
                 Spacer()

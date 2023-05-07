@@ -10,10 +10,8 @@ import SwiftUI
 
 struct AudioPlayerPlayButton: View {
     
-//    @EnvironmentObject
-//    var artist: Artist
     @ObservedObject private var audioManager = StreamManager.shared
-    @Binding var isMaximased: Bool
+    @Binding var isMaximized: Bool
     
     var body: some View {
         
@@ -52,11 +50,11 @@ struct AudioPlayerPlayButton: View {
                     // up
                     // Тут было бы здорово придумать анимацию
                     
-                    isMaximased.toggle()
+                    isMaximized.toggle()
                 }
 
                 if value.translation.height > 0 {
-                    isMaximased.toggle()                }
+                    isMaximized.toggle()                }
             }))
     }
 }

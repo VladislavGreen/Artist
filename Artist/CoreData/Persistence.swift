@@ -22,28 +22,27 @@ struct PersistenceController {
         
         let track1 = Track(context: viewContext)
         track1.favoritedCount = 12
-        track1.id = UUID()
+        track1.id = UUID(uuidString: "E07ABFD8-429B-6A6A-AEDB-EE4C9E9A7C70")!
         track1.number = 1
         track1.trackName = "trackName"
-        track1.trackURL = "trackURL"
+        track1.trackURL = "https://drive.google.com/uc?export=open&id=1dzee5B6xD89AKkklvRnJ2Sz7LNNzTap4"
         
         let release1 = Release(context: viewContext)
         release1.dateEditedTS = Date(timeIntervalSince1970: 1672531200000)
         release1.dateReleasedTS = Date(timeIntervalSince1970: 1672531200000)
-        release1.id = UUID()
+        release1.id = UUID(uuidString: "E07ABFD8-429B-4A5A-AEDB-EE4C9E9A7C94")!
         release1.imageCoverName = "imageCoverName"
-        release1.imageCoverURL = "imageCoverURL"
+        release1.imageCoverURL = "https://drive.google.com/uc?export=open&id=1gmSLscIWQoR0-DEBdWIf3fv6LKt38AsJ"
         release1.isFeatured = true
         release1.labelName = "labelName"
         release1.name = "Preview Release"
         release1.type = "Single"
         release1.tracks = [track1]
-        //        release1.id = UUID(uuidString: "E07ABFD8-429B-4A5A-AEDB-EE4C9E9A7C94")!
         
         let post1 = Post(context: viewContext)
         post1.dateCreatedTS = Date(timeIntervalSince1970: 1672531200000)
         post1.dateEditedTS = Date(timeIntervalSince1970: 1672531200000)
-        post1.id = UUID()
+        post1.id = UUID(uuidString: "E07ABFD9-429B-4A5A-AEDB-EE4C9E9A7C94")!
         post1.imageName = "imageName"
         post1.imageURL = "imageURL"
         post1.isFlagged = true
@@ -66,8 +65,8 @@ struct PersistenceController {
         artist1.id = UUID()
         artist1.isConfirmed = true
         artist1.isPrimary = true
-        artist1.mainImageName = "ElectronicTrio"
-        artist1.mainImageURL = "mainImageURL"
+        artist1.mainImageName = "PreviewTrio"
+        artist1.mainImageURL = "https://drive.google.com/uc?export=open&id=1M893MdmN3phicZRKt8Npj6-R0r4HMYVk"
         artist1.name = "Artist Name From Persistance"
         artist1.releases = [release1]
         artist1.posts = [post1]

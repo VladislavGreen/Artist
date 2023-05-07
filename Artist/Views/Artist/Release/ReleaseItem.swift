@@ -43,9 +43,9 @@ struct ReleaseItem: View {
                     Text(release.name)
                         .frame(width: 104)
                         .lineLimit(1)
-#if DEBUG
-                    Text(release.dateReleasedTS.formatted(date: .abbreviated, time: .omitted))
-#endif
+//#if DEBUG
+//                    Text(release.dateReleasedTS.formatted(date: .abbreviated, time: .omitted))
+//#endif
                 }
                 .foregroundColor(.textPrimary)
                 .font(.caption)

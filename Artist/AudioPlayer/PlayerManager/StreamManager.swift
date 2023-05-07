@@ -117,7 +117,6 @@ final class StreamManager: NSObject, ObservableObject {
         streamPlayer?.play()
         
         print("play")
-        print(currentTrack?.trackName)
     }
     
     public func continuePlayback() {

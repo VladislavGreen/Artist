@@ -34,8 +34,6 @@ struct ArtistEditorView: View {
     @State var country: String = ""
     @State var city: String = ""
     
-
-
     
     @Binding var isNewArtist: Bool
     

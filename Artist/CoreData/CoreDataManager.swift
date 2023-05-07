@@ -60,10 +60,8 @@ class CoreDataManager {
         }
     }
     
-    // Проверка дубликатов
+    // Проверка дубликатов по ID
     func checkDuplicates(_ artists: [Artist]) {
-
-        // Проверка нет-ли уже такой сущности (по ID)
 
         for i in 0..<artists.count {
             let fetchRequestCheck = Artist.fetchRequest()
@@ -156,7 +154,6 @@ class CoreDataManager {
                     } catch {
                         print("Не хаватает свободного места?")
                     }
-
                 }
             }
         } catch {

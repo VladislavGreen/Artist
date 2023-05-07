@@ -34,13 +34,11 @@ final class DownloadManager: ObservableObject {
         
         isDownloading = true
         
-        // Пробуем привести в соответствие имена
-        let trimmedFolderName = folderName.trimmingCharacters(in: .urlFragmentAllowed)
-//        let trimmedFileName = fileName.trimmingCharacters(in: .urlFragmentAllowed)
-        
         // Создаём папку
         let fileManager = FileManager.default
         let documentsFolder = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        
+        let trimmedFolderName = folderName.trimmingCharacters(in: .urlFragmentAllowed)
 
         let folderURL = documentsFolder.appendingPathComponent(trimmedFolderName)
         let folderExists = (try? folderURL.checkResourceIsReachable()) ?? false
@@ -85,14 +83,9 @@ final class DownloadManager: ObservableObject {
                         DispatchQueue.main.async {
                             do {
                                 try data.write(to: destinationUrl, options: Data.WritingOptions.atomic)
-
-                                DispatchQueue.main.async {
-                                    self.isDownloading = false
-                                    self.isDownloaded = true
-                                    
-                                    completion? (destinationUrl, nil)
-                                    
-                                }
+                                self.isDownloading = false
+                                self.isDownloaded = true
+                                completion? (destinationUrl, nil)
                             } catch let error {
                                 print("Error decoding: ", error)
                                 self.isDownloading = false
@@ -103,7 +96,6 @@ final class DownloadManager: ObservableObject {
                 }
                 dataTask.resume()
             }
-            
         } catch {
             print("не удалось сохранить файл")
             completion? (nil, "не удалось сохранить файл")
